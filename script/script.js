@@ -84,7 +84,21 @@ let categoryPoints = {
         dataItem: "it4",
         year: 2020
     }
-],
+    ],
+    category3: [
+    {
+        lat: 53.2749,
+        lon: 26.4648,
+        name: "Якуб Колас",
+        time: "22 октября 1882г.",
+        iconLayout: 'default#image',
+        iconImageHref: '/BMap/img/user-icon.svg',
+        iconImageSize: [20,20],
+        iconImageOffset: [0,0],
+        dataItem: "it5",
+        year: 1882
+    },
+    ]
 };
 
 let center = [53.88292819423452,27.74879671867493];
