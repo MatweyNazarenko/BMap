@@ -40,7 +40,7 @@ let categoryPoints = {
         name: "Белостокско-Минское сражение",
         time: "22 июня — 9 июля 1941 года",
         iconLayout: 'default#image',
-        iconImageHref: '/BMap/img/sword-icon.svg',
+        iconImageHref: 'img/sword-icon.svg',
         iconImageSize: [20,20],
         iconImageOffset: [0,0],
         dataItem: "it1",
@@ -52,11 +52,23 @@ let categoryPoints = {
         name: "Минская операция",
         time: "29 июня — 4 июля 1944 года",
         iconLayout: 'default#image',
-        iconImageHref: '/BMap/img/sword-icon.svg',
+        iconImageHref: 'img/sword-icon.svg',
         iconImageSize: [20,20],
         iconImageOffset: [0,0],
         dataItem: "it2",
         year: 1944
+    },
+    {
+        lat: 52.0457,
+        lon: 23.3914,
+        name: "Оборона Брестской крепости",
+        time: "22 июня — 23 июля 1941 года",
+        iconLayout: 'default#image',
+        iconImageHref: 'img/sword-icon.svg',
+        iconImageSize: [20,20],
+        iconImageOffset: [0,0],
+        dataItem: "it7",
+        year: 1941
     }
     ], 
     category2: [
@@ -66,7 +78,7 @@ let categoryPoints = {
         name: "Мемориальный комплекс «хатынь»",
         time: "5 июля 1969 г.",
         iconLayout: 'default#image',
-        iconImageHref: '/BMap/img/monument-icon.svg',
+        iconImageHref: 'img/monument-icon.svg',
         iconImageSize: [20,20],
         iconImageOffset: [0,0],
         dataItem: "it3",
@@ -78,7 +90,7 @@ let categoryPoints = {
         name: "Мемориальный комплекс «Ола»",
         time: "Лето 2020 г.",
         iconLayout: 'default#image',
-        iconImageHref: '/BMap/img/monument-icon.svg',
+        iconImageHref: 'img/monument-icon.svg',
         iconImageSize: [20,20],
         iconImageOffset: [0,0],
         dataItem: "it4",
@@ -92,11 +104,23 @@ let categoryPoints = {
         name: "Якуб Колас",
         time: "22 октября 1882г.",
         iconLayout: 'default#image',
-        iconImageHref: '/BMap/img/user-icon.svg',
+        iconImageHref: 'img/user-icon.svg',
         iconImageSize: [20,20],
         iconImageOffset: [0,0],
         dataItem: "it5",
         year: 1882
+    },
+    {
+        lat: 55.485576,
+        lon: 28.768349,
+        name: "Франциск Скорина",
+        time: "около 1490г.",
+        iconLayout: 'default#image',
+        iconImageHref: 'img/user-icon.svg',
+        iconImageSize: [20,20],
+        iconImageOffset: [0,0],
+        dataItem: "it6",
+        year: 1490
     },
     ]
 };

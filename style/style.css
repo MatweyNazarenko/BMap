@@ -397,4 +397,8 @@ footer .info-footer p:first-child {
 
 .colXat img:last-child {
   max-width: 350px;
+}
+
+.colHeight img {
+  max-height: 500px;
 }/*# sourceMappingURL=style.css.map */
