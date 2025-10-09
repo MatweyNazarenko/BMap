@@ -401,4 +401,8 @@ footer .info-footer p:first-child {
 
 .colHeight img {
   max-height: 500px;
+}
+
+.oneCol img {
+  max-width: 700px !important;
 }/*# sourceMappingURL=style.css.map */
