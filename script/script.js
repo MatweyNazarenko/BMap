@@ -93,6 +93,78 @@ let categoryPoints = {
         iconImageOffset: [0,0],
         dataItem: "it9",
         year: 1941
+    },
+    {
+        lat: 54.9,
+        lon: 30.18,
+        name: "Витебско-Оршанская операция",
+        time: "23 июня — 28 июня 1944 года",
+        iconLayout: 'default#image',
+        iconImageHref: 'img/sword-icon.svg',
+        iconImageSize: [20,20],
+        iconImageOffset: [0,0],
+        dataItem: "it10",
+        year: 1944
+    },
+    {
+        lat: 52.51,
+        lon: 30.55,
+        name: "Гомельско-Речицкая наступательная операция",
+        time: "10 ноября — 30 ноября 1943 года",
+        iconLayout: 'default#image',
+        iconImageHref: 'img/sword-icon.svg',
+        iconImageSize: [20,20],
+        iconImageOffset: [0,0],
+        dataItem: "it11",
+        year: 1943
+    },
+    {
+        lat: 55.495576,
+        lon: 28.478349,
+        name: "Полоцкая наступательная операция",
+        time: "29 июня — 4 июля 1944 года",
+        iconLayout: 'default#image',
+        iconImageHref: 'img/sword-icon.svg',
+        iconImageSize: [20,20],
+        iconImageOffset: [0,0],
+        dataItem: "it12",
+        year: 1944
+    },
+    {
+        lat: 53.09,
+        lon: 29.15,
+        name: "Бобруйская операция",
+        time: "24 июня — 29 июня 1944 года",
+        iconLayout: 'default#image',
+        iconImageHref: 'img/sword-icon.svg',
+        iconImageSize: [20,20],
+        iconImageOffset: [0,0],
+        dataItem: "it13",
+        year: 1944
+    },
+    {
+        lat: 53.05,
+        lon: 30.01,
+        name: "Рогачёвско-Жлобинская операция",
+        time: "21 февраля — 26 февраля 1944 года",
+        iconLayout: 'default#image',
+        iconImageHref: 'img/sword-icon.svg',
+        iconImageSize: [20,20],
+        iconImageOffset: [0,0],
+        dataItem: "it14",
+        year: 1944
+    },
+    {
+        lat: 53.91,
+        lon: 30.,
+        name: "Могилёвская операция",
+        time: "23 июня — 28 июня 1944 года",
+        iconLayout: 'default#image',
+        iconImageHref: 'img/sword-icon.svg',
+        iconImageSize: [20,20],
+        iconImageOffset: [0,0],
+        dataItem: "it15",
+        year: 1944
     }
     ], 
     category2: [
@@ -119,6 +191,30 @@ let categoryPoints = {
         iconImageOffset: [0,0],
         dataItem: "it4",
         year: 2020
+    },
+    {
+        lat: 54.019166669906,
+        lon: 27.89777777982,
+        name: "Курган Славы",
+        time: "5 июля 1969 г.",
+        iconLayout: 'default#image',
+        iconImageHref: 'img/monument-icon.svg',
+        iconImageSize: [20,20],
+        iconImageOffset: [0,0],
+        dataItem: "it16",
+        year: 1969
+    },
+    {
+        lat: 52.085608, 
+        lon: 23.655606,
+        name: "Мемориальный комплекс «Брестская крепость-герой»",
+        time: "25 сентября 1971 г.",
+        iconLayout: 'default#image',
+        iconImageHref: 'img/monument-icon.svg',
+        iconImageSize: [20,20],
+        iconImageOffset: [0,0],
+        dataItem: "it17",
+        year: 1971
     }
     ],
     category3: [
