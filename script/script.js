@@ -195,7 +195,7 @@ let categoryPoints = {
     {
         lat: 54.019166669906,
         lon: 27.89777777982,
-        name: "Курган Славы",
+        name: "Курган Славы в Минске",
         time: "5 июля 1969 г.",
         iconLayout: 'default#image',
         iconImageHref: 'img/monument-icon.svg',
@@ -205,8 +205,8 @@ let categoryPoints = {
         year: 1969
     },
     {
-        lat: 52.085608, 
-        lon: 23.655606,
+        lat: 52.083314448631704, 
+        lon: 23.65957176582804,
         name: "Мемориальный комплекс «Брестская крепость-герой»",
         time: "25 сентября 1971 г.",
         iconLayout: 'default#image',
@@ -215,6 +215,18 @@ let categoryPoints = {
         iconImageOffset: [0,0],
         dataItem: "it17",
         year: 1971
+    },
+    {
+        lat: 52.03854, 
+        lon: 29.237590,
+        name: "Курган Славы в Мозыре",
+        time: "1967 год",
+        iconLayout: 'default#image',
+        iconImageHref: 'img/monument-icon.svg',
+        iconImageSize: [20,20],
+        iconImageOffset: [0,0],
+        dataItem: "it18",
+        year: 1967
     }
     ],
     category3: [
