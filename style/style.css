@@ -296,6 +296,7 @@ header h1 {
   display: none;
   scrollbar-width: thin;
   scrollbar-color: #009739 #ffffff;
+  z-index: 100000;
 }
 .modal .close {
   width: 1.5rem;
@@ -405,4 +406,13 @@ footer .info-footer p:first-child {
 
 .oneCol img {
   max-width: 700px !important;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+}
+
+.logo img {
+  width: 64px;
 }/*# sourceMappingURL=style.css.map */

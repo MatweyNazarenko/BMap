@@ -204,6 +204,7 @@ header{
     display: none;
     scrollbar-width: thin;
     scrollbar-color: #009739 #ffffff;
+    z-index: 100000;
     .close{
         width: 1.5rem;
         position: absolute;
@@ -319,5 +320,14 @@ footer{
 .oneCol{
     img{
         max-width: 700px !important;
+    }
+}
+.header{
+    display: flex;
+    align-items: center;
+}
+.logo{
+    img{
+        width: 64px;
     }
 }

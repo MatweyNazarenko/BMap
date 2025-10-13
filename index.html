@@ -8,24 +8,31 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Alan+Sans:wght@300..900&display=swap" rel="stylesheet">
+    <link type="image/x-icon" href="img/favIcon.ico" rel="shortcut icon">
+    <link type="Image/x-icon" href="img/favIcon.ico" rel="icon">
 </head>
 <body>
     <header>
         <div class="container">
-            <h1>Погрузись в историю Беларуси</h1>
+            <div class="header">
+                <a href="index.html" class="logo">
+                    <img src="img/logo.svg" alt="logo">
+                </a>
+                <h1>Погрузись в историю Беларуси</h1>
+            </div>
         </div>
     </header>
     <section class="mapSection">
         <div class="container">
             <div class="mapMenu">
                 <ul class="typeUse" id="typeUse">
-                    <li><button class="active" id="checkboxButton">Point-View</button></li>
-                    <li><button id="lineButton">Time Line</button></li>
+                    <li><button class="active" id="checkboxButton">Показ меток</button></li>
+                    <li><button id="lineButton">Лента времени</button></li>
                 </ul>
                 <div id="map" class="mapJS"></div>
                 <div class="useTool">
                     <div class="use-box useVaried">
-                    <h2>Use-box</h2>
+                    <h2>Метки</h2>
                     <ul id="use-hide">
                         <li><input type="checkbox" data-category="category1" checked>- <img src="img/sword-icon.svg" alt="sword-icon"> места битв на территории Беларуси</li>
                         <li><input type="checkbox" data-category="category2" checked>- <img src="img/monument-icon.svg" alt="monument-icon"> памятники</li>
