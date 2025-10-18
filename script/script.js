@@ -254,6 +254,18 @@ let categoryPoints = {
         dataItem: "it6",
         year: 1490
     },
+    {
+        lat: 55.0241597741464,
+        lon: 30.792299211400554,
+        name: "Марк Шагал",
+        time: "24 июня 1887г.",
+        iconLayout: 'default#image',
+        iconImageHref: 'img/user-icon.svg',
+        iconImageSize: [20,20],
+        iconImageOffset: [0,0],
+        dataItem: "it19",
+        year: 1887
+    }
     ]
 };
 
