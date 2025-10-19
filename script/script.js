@@ -265,6 +265,30 @@ let categoryPoints = {
         iconImageOffset: [0,0],
         dataItem: "it19",
         year: 1887
+    },
+    {
+        lat: 54.8789,
+        lon: 26.9371,
+        name: "Игнатий Домейко",
+        time: "31 июля 1802г.",
+        iconLayout: 'default#image',
+        iconImageHref: 'img/user-icon.svg',
+        iconImageSize: [20,20],
+        iconImageOffset: [0,0],
+        dataItem: "it20",
+        year: 1802
+    },
+    {
+        lat: 52.7673,
+        lon: 25.1256,
+        name: "Тадеуш Костюшко",
+        time: "	4 февраля 1746г.",
+        iconLayout: 'default#image',
+        iconImageHref: 'img/user-icon.svg',
+        iconImageSize: [20,20],
+        iconImageOffset: [0,0],
+        dataItem: "it21",
+        year: 1746
     }
     ]
 };
