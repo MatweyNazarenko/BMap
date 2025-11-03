@@ -296,12 +296,20 @@ let categoryPoints = {
 let center = [53.88292819423452,27.74879671867493];
 let startZoom = 7;
 function init(){
+
+    //Создание карты
     let map = new ymaps.Map("map",{
         center: center,
         zoom: startZoom
+    }, {
+        searchControlProvider: 'yandex#search'
     });
     let placemarksByCategoryOnMap = {};
-//startCheckbox
+
+
+
+
+    //startCheckbox
     document.querySelector('#use-hide').querySelectorAll('li').forEach(item =>{
     const checkbox = item.querySelector('input[type="checkbox"]');
     if(checkbox){
@@ -436,6 +444,23 @@ document.querySelector('#lineButton').addEventListener('click', ()=>{
 
     }
 });
+    //Местоположение
+    function success(position) {
+        const latitude = position.coords.latitude;
+        const longitude = position.coords.longitude;
+        console.log(`${latitude}, ${longitude}`);
+        const placemark = new ymaps.Placemark([latitude, longitude], {}, {
+            iconLayout: 'default#image',
+            iconImageHref: 'img/logo.svg',
+            iconImageSize: [20,20],
+            iconImageOffset: [0,0]
+        });
+        map.geoObjects.add(placemark);
+    }
+    function error(err) {
+        console.warn(`Ошибка геолокации: ${err.message}`);
+    }
+    navigator.geolocation.getCurrentPosition(success, error);
 
     map.controls.remove('geolocationControl'); // удаляем геолокацию
     // map.controls.remove('searchControl'); // удаляем поиск
@@ -471,3 +496,4 @@ timeLine.addEventListener('input', () => {
 nowYear.addEventListener('input', () => {
       timeLine.value = nowYear.value;
 });
+

@@ -91,6 +91,7 @@ legend {
 
 .show {
   display: block !important;
+  animation: fadeIn 0.4s ease;
 }
 
 body {
@@ -284,6 +285,14 @@ header h1 {
   padding: 2rem 0;
 }
 
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
 .modal {
   padding: 15px 50px;
   background-color: #fff;
