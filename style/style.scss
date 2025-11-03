@@ -4,6 +4,7 @@
 }
 .show{
     display: block !important;
+    animation: fadeIn .4s ease;
 }
 body{
     font-family: "Alan Sans", sans-serif;
@@ -191,7 +192,14 @@ header{
 .mapSection{
     padding: 2rem 0;
 }
-
+@keyframes fadeIn { 
+    0%{ 
+        opacity: 0 
+    } 
+    100% { 
+        opacity: 1 
+    } 
+}
 .modal{
     padding: 15px 50px;
     background-color: #fff;
