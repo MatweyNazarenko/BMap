@@ -1,6 +1,38 @@
 //typeUse
 const buttonsArr = document.querySelectorAll('#typeUse li button');
 const useMenus = document.querySelectorAll('.useVaried');
+const goBtn = document.querySelectorAll('.modal #go');
+const carRoute = document.getElementById('carRoute');
+const busRoute = document.getElementById('busRoute');    
+const footerRoute = document.getElementById('footerRoute');    
+const deleteRoute = document.getElementById('deleteRoute');                      
+const routePanel = document.getElementById('routePanel');
+
+ymaps.ready(['multiRouter.MultiRoute']).then(init);
+
+function getUserLocation(callback) {
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(
+            (position) => {
+                const userPosiiton = [position.coords.latitude, position.coords.longitude];
+                if(callback) {
+                    callback(userPosiiton);
+                }
+            },
+            (err) => {
+                console.log("Ошибка геолокации:", err.message);
+                console.warn("Не удалось определить ваше местоположение!");
+            }
+        );
+    } else {
+        alert("Геолокация не поддерживается вашим браузером!");
+    }
+}
+
+// Можно сразу получить координаты при загрузке карты:
+
+
+
 function hideUse(){
     useMenus.forEach(item =>{
         item.style.display = "none";
@@ -23,7 +55,15 @@ buttonsArr.forEach((item,i)=>{
 })
 
 
-
+function addPlacemark(nameEach){
+    let placemark = new ymaps.Placemark([nameEach.lat, nameEach.lon], {}, {
+        iconLayout: nameEach.iconLayout,
+        iconImageHref: nameEach.iconImageHref,
+        iconImageSize: nameEach.iconImageSize,
+        iconImageOffset: nameEach.iconImageOffset
+    });
+    return placemark;
+}
 //lineTime
 
 const nowYear = document.querySelector('#nowYear'),
@@ -59,8 +99,10 @@ let categoryPoints = {
         year: 1944
     },
     {
-        lat: 52.0457,
-        lon: 23.3914,
+        // lat: 52.0457,
+        // lon: 23.3914,
+        lat: 51.94638567440506, 
+        lon: 23.699613244830573,
         name: "Оборона Брестской крепости",
         time: "22 июня — 23 июля 1941 года",
         iconLayout: 'default#image',
@@ -300,11 +342,231 @@ function init(){
     //Создание карты
     let map = new ymaps.Map("map",{
         center: center,
-        zoom: startZoom
-    }, {
-        searchControlProvider: 'yandex#search'
+        zoom: startZoom,
+        // type: 'yandex#hybrid'
     });
+
+    // // Добавление дополгительных кнопок
+    // let myButton  = new ymaps.control.Button(
+    //     {
+    //         data: {
+    //             content: 'Тест',
+    //             title: 'отжимаюсь сама',
+    //         }
+    //     }, {
+    //         selectONClick: false
+    //         }
+    // );
+    // myButton.events.add(
+    //     'click',
+    //     function (){
+    //         alert('Щёлк');
+    //     }
+    // );
+    // map.controls.add(myButton);
+
+
+
+    // let clusterer = new ymaps.Clusterer({
+    //     preset: 'islands#invertedVioletClusterIcons',
+
+    //     // true - если хотеть кластелизовать точки только с одинаковыми координатами
+    //     groupByCoordinates: false,
+
+
+    //     clusterDisableClickZoom: true,
+    //     clusterHideIconOnBalloonOpen: false,
+    //     geoObjectHideIconOnBalloonOpen: false
+    // })
+
+    // let getPointData = function (index){
+    //     return{
+    //         balloonContentFooter: '<font size=1>Информация представлена: </font> балуном <strong>метки' + index + '</strong>',
+    //         clusterCaption: 'Метка <strong>'+index+'</strong>'
+    //     }
+    // }
+    // let getPointOptions = function(){
+    //     return {
+    //         preset: 'island#violetIcon'
+    //     };
+    // }
+    // let points = [
+    // // category1
+    // [53.1325, 25.1688],
+    // [53.64, 27.34],
+    // [51.94638567440506, 23.699613244830573],
+    // [55.3, 30.48],
+    // [53.91, 30.35],
+    // [54.9, 30.18],
+    // [52.51, 30.55],
+    // [55.495576, 28.478349],
+    // [53.09, 29.15],
+    // [53.05, 30.01],
+    // [53.91, 30.0],
+
+    // // category2
+    // [54.335, 27.944167],
+    // [52.737772, 29.664905],
+    // [54.019166669906, 27.89777777982],
+    // [52.083314448631704, 23.65957176582804],
+    // [52.03854, 29.23759],
+
+    // // category3
+    // [53.2749, 26.4648],
+    // [55.485576, 28.768349],
+    // [55.0241597741464, 30.792299211400554],
+    // [54.8789, 26.9371],
+    // [52.7673, 25.1256]
+    // ];
+    //  geoObjects = [];
+
+    // for(var i = 0, len = points.length; i < len; i++) {
+    //     geoObjects[i] = new ymaps.Placemark(points[i], getPointData(i), getPointOptions());
+    // }
+
+    // clusterer.options.set({
+    //     gridSize: 80,
+    //     clusterDisableClickZoom: true
+    // });
+    // clusterer.add(geoObjects);
+    // map.geoObjects.add(clusterer);
+    // map.setBounds(clusterer.getBounds(), {
+    //     checkZoomRange: true
+    // });
+
+
+
+
+
     let placemarksByCategoryOnMap = {};
+
+
+
+
+
+//Геокодинг
+
+// let myGeocoder = ymaps.geocode([53.893952156452926,27.56112157157786],{kind:'metro'});
+
+// myGeocoder.then(
+//     function(res){
+//         let nearest = res.geoObjects.get(0);
+//         let name = nearest.properties.get('name');
+//         nearest.properties.set('iconContent', name);
+//         nearest.option.set('preset', 'twirl#redStretchyIcon');
+//         map.geoObjects.add(res.geoObjects);l
+//     },
+//     function(err){
+//         console.warn('Ошибка');
+//     }
+// )
+
+
+//МАРШРУТИЗАЦИЯ
+
+// let multiRoute = new ymaps.multiRouter.MultiRoute({
+//     referencePoints: [
+//         [59.9956, 29.7663],       // Кронштадт
+//         // [59.93328, 30.342791],    // Центр СПб
+//         [59.9554, 30.3556]        // Финляндский вокзал
+//     ],
+//     params: {
+//         routingMode: 'auto' // auto | masstransit | pedestrian
+//     }
+// }, {
+//     boundsAutoApply: true
+// });
+
+// map.geoObjects.add(multiRoute);
+
+
+//ДОБАВЛЕНИЕ КАРТЫ БЕЛАРУСИ
+
+    // var lastCollection = 0,
+    //     lng = 'ru',      // язык интерфейса
+    //     level = '1';
+
+    // ymaps.regions.load('BY', {
+    //     lang: lng,
+    //     quality: level
+    // }).then(function (result) {
+    //     lastCollection = result.geoObjects;
+    //     map.geoObjects.add(lastCollection);
+    // }, function () {
+    //     console.error('Не удалось загрузить регионы Беларуси');
+    // });
+
+
+
+
+    // Отключаем некоторые включенные по умолчанию поведения:
+    // - drag - перемещение карты при нажатой левой кнопки мыши;
+    // - rightMouseButtonMagnifier - увеличение области, выделенной
+    // правой кнопкой мыши.
+    // .disable(['drag', 'rightMouseButtonMagnifier']);
+    // Включаем измеритель расстояний, активирующийся при
+    // щелчке левой кнопкой мыши.
+    // .enable('ruler');
+
+
+
+    getUserLocation(function(userPosition){
+        goBtn.forEach(item =>{
+            let targetCoords = [
+                parseFloat(item.dataset.lat),
+                parseFloat(item.dataset.lon)
+            ]
+            item.addEventListener('click',()=>{
+                routePanel.style.display = "flex";
+                let multiRoute = new ymaps.multiRouter.MultiRoute({
+                    referencePoints: [
+                        userPosition,       // Кронштадт
+                        // [59.93328, 30.342791],    // Центр СПб
+                        targetCoords       // Финляндский вокзал
+                    ],
+                    params: {
+                        routingMode: 'auto', // auto | masstransit | pedestrian
+                        avoidTrafficJams: true
+                    }
+                }, {
+                    boundsAutoApply: true
+                });
+
+                map.geoObjects.add(multiRoute);
+
+                carRoute.addEventListener('click', ()=>{
+                    multiRoute.model.setParams({ routingMode: 'auto' }, true);
+                    carRoute.classList.add('active');
+                    busRoute.classList.remove('active');
+                    footerRoute.classList.remove('active');
+                })
+
+                busRoute.addEventListener('click', ()=>{
+                    multiRoute.model.setParams({ routingMode: 'masstransit'}, true);
+                    carRoute.classList.remove('active');
+                    busRoute.classList.add('active');
+                    footerRoute.classList.remove('active');
+                })
+
+                footerRoute.addEventListener('click', ()=>{
+                    multiRoute.model.setParams({ routingMode: 'pedestrian'}, true);
+                    carRoute.classList.remove('active');
+                    busRoute.classList.remove('active');
+                    footerRoute.classList.add('active');
+                })
+
+                deleteRoute.addEventListener('click', ()=>{
+                    routePanel.style.display = "none";
+                    carRoute.classList.add('active');
+                    busRoute.classList.remove('active');
+                    footerRoute.classList.remove('active');
+                    map.geoObjects.remove(multiRoute);
+                })
+            })
+        })
+    });
+
+
 
 
 
@@ -314,43 +576,33 @@ function init(){
     const checkbox = item.querySelector('input[type="checkbox"]');
     if(checkbox){
         let category = checkbox.dataset.category;
-        document.querySelector('#checkboxButton').addEventListener('click', ()=>{
-            if(checkbox.checked){
-            if(!placemarksByCategoryOnMap[category]){
-                placemarksByCategoryOnMap[category] = [];
-            }
-            if(categoryPoints[category]){
-                categoryPoints[category].forEach(point => {
-                const placemark = new ymaps.Placemark([point.lat, point.lon], {}, {
-                    iconLayout: point.iconLayout,
-                    iconImageHref: point.iconImageHref,
-                    iconImageSize: point.iconImageSize,
-                    iconImageOffset: point.iconImageOffset
-                });
-                placemark.events.add('click', function (e) {
-                    document.querySelectorAll('.modal').forEach(item =>{
-                        item.classList.remove('show');
-                    });
-                    document.querySelector(`[data-item="${point.dataItem}"]`).classList.add('show');
-                });
-                map.geoObjects.add(placemark);
-                placemarksByCategoryOnMap[category].push(placemark);
-            });
-        }
-            }
-        })
+        // document.querySelector('#checkboxButton').addEventListener('click', ()=>{
+        //     if(checkbox.checked){
+        //     if(!placemarksByCategoryOnMap[category]){
+        //         placemarksByCategoryOnMap[category] = [];
+        //     }
+        //     if(categoryPoints[category]){
+        //         categoryPoints[category].forEach(point => {
+        //         let placemark = addPlacemark(point);
+        //         placemark.events.add('click', function (e) {
+        //             document.querySelectorAll('.modal').forEach(item =>{
+        //                 item.classList.remove('show');
+        //             });
+        //             document.querySelector(`[data-item="${point.dataItem}"]`).classList.add('show');
+        //         });
+        //         map.geoObjects.add(placemark);
+        //         placemarksByCategoryOnMap[category].push(placemark);
+        //     });
+        // }
+        //     }
+        // })
         if (checkbox.checked) {
             if(!placemarksByCategoryOnMap[category]){
                 placemarksByCategoryOnMap[category] = [];
             }
             if(categoryPoints[category]){
                 categoryPoints[category].forEach(point => {
-                const placemark = new ymaps.Placemark([point.lat, point.lon], {}, {
-                    iconLayout: point.iconLayout,
-                    iconImageHref: point.iconImageHref,
-                    iconImageSize: point.iconImageSize,
-                    iconImageOffset: point.iconImageOffset
-                });
+                let placemark = addPlacemark(point);
                 placemark.events.add('click', function (e) {
                     document.querySelectorAll('.modal').forEach(item =>{
                         item.classList.remove('show');
@@ -370,12 +622,7 @@ function init(){
                         placemarksByCategoryOnMap[category] = [];
                   }
                 categoryPoints[checkbox.dataset.category].forEach(item =>{
-                    let placemark = new ymaps.Placemark([item.lat, item.lon], {}, {
-                        iconLayout: item.iconLayout,
-                        iconImageHref: item.iconImageHref,
-                        iconImageSize: item.iconImageSize,
-                        iconImageOffset: item.iconImageOffset
-                    });
+                    let placemark = addPlacemark(item);
                     placemark.events.add('click', function (e) {
                     document.querySelectorAll('.modal').forEach(it =>{
                         it.classList.remove('show');
@@ -394,6 +641,48 @@ function init(){
         }
             }
         })
+
+// // Построение маршрута.
+// // По умолчанию строится автомобильный маршрут.
+// var multiRoute = new ymaps.multiRouter.MultiRoute({   
+//     // Точки маршрута. Точки могут быть заданы как координатами, так и адресом. 
+//     referencePoints: [
+//         'Москва, метро Смоленская',
+//         'Москва, метро Арбатская',
+//         [55.734876, 37.59308], // улица Льва Толстого.
+//     ]
+// }, {
+//       // Автоматически устанавливать границы карты так,
+//       // чтобы маршрут был виден целиком.
+//       boundsAutoApply: true
+// });
+
+// // Добавление маршрута на карту.
+// map.geoObjects.add(multiRoute);
+
+// Определение местоположения пользователя.
+// var location = ymaps.geolocation.get();
+// Метод geolocation.get() возвращает Promise, который
+// будет разрешен коллекцией <u />.
+// Ссылка на эту коллекцию будет доступна в поле res.geoObjects.
+// location.then(function (res) {
+//     // Получение адреса местоположения пользователя.
+//     var userTextLocation = /*res.geoObjects.get(0).properties.get('text')*/ [position.coords.latitude, position.coords.longitude];
+//     console.log(userTextLocation);
+//     control.routePanel.state.set({
+//         // В качестве начальной точки маршрута будет установлено
+//         // местоположение пользователя.
+//         type: 'masstransit',
+//         fromEnabled: true,
+//         from: userTextLocation,
+//         // Адрес конечной точки.
+//         toEnabled: true,
+//         to: 'Москва, ул. Льва Толстого, 16'
+//     });
+// });
+
+
+// let endPoint = [53.88292819423452,27.74879671867493];
 //lineTimeViewPoint
 
 function TimelinePoints(year){
@@ -408,12 +697,7 @@ function TimelinePoints(year){
         }
         categoryPoints[category].forEach(item => {
         if (item.year <= year) {
-            const placemark = new ymaps.Placemark([item.lat, item.lon], {}, {
-                iconLayout: item.iconLayout,
-                iconImageHref: item.iconImageHref,
-                iconImageSize: item.iconImageSize,
-                iconImageOffset: item.iconImageOffset
-        });
+            let placemark = addPlacemark(item);
         placemark.events.add('click', ()=> {
             document.querySelectorAll('.modal').forEach(item =>{
                 item.classList.remove('show');
@@ -427,6 +711,7 @@ function TimelinePoints(year){
     }
 }
 
+
 document.querySelector('#lineButton').addEventListener('click', ()=>{
     TimelinePoints(parseInt(timeLine.value));
     timeLine.addEventListener('input', () => {
@@ -436,31 +721,25 @@ document.querySelector('#lineButton').addEventListener('click', ()=>{
         TimelinePoints(parseInt(nowYear.value));
     });
 })
-
-
-
-
-
-
     }
 });
+
     //Местоположение
-    function success(position) {
-        const latitude = position.coords.latitude;
-        const longitude = position.coords.longitude;
-        console.log(`${latitude}, ${longitude}`);
-        const placemark = new ymaps.Placemark([latitude, longitude], {}, {
+    getUserLocation(function(userPosition){
+        let placemark = new ymaps.Placemark(userPosition, {}, {
             iconLayout: 'default#image',
             iconImageHref: 'img/logo.svg',
             iconImageSize: [20,20],
             iconImageOffset: [0,0]
         });
+
         map.geoObjects.add(placemark);
+
     }
-    function error(err) {
-        console.warn(`Ошибка геолокации: ${err.message}`);
-    }
-    navigator.geolocation.getCurrentPosition(success, error);
+    );
+    
+   
+
 
     map.controls.remove('geolocationControl'); // удаляем геолокацию
     // map.controls.remove('searchControl'); // удаляем поиск
@@ -471,8 +750,6 @@ document.querySelector('#lineButton').addEventListener('click', ()=>{
     // map.controls.remove('rulerControl'); // удаляем контрол правил
     // map.behaviors.disable(['scrollZoom']); // отключаем скролл карты (опционально) 
 }
-ymaps.ready(init);
-
 
 //modal
 const modal = document.querySelectorAll('#modal').forEach(item =>{

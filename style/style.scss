@@ -53,6 +53,7 @@ header{
         }
     }
     .use-box{
+        border-radius: 12px;
         position: absolute;
         bottom: 10px;
         right: 10px;
@@ -83,6 +84,7 @@ header{
                     margin-right: 6px;
                     width: 20px;
                     height: 20px;
+                    accent-color: orange;
                 }
             }
         }
@@ -219,6 +221,12 @@ header{
         top: 20px;
         right: 20px;
     }
+    .go{
+        position: absolute;
+        width: 1.85rem;
+        top: 70px;
+        right: 17px;
+    }
     .content{
         display: flex;
         flex-direction: column;
@@ -337,5 +345,45 @@ footer{
 .logo{
     img{
         width: 64px;
+    }
+}
+.routePanel{
+    display: none;
+    align-items: center;
+    gap: 0 20px;
+    position: absolute;
+    top: 60px;
+    right: 350px;
+    z-index: 100;
+    transition: .3s;
+    li{
+        .active{
+            background-color: rgb(255, 165, 0);
+            &:hover{
+                background-color: rgb(255, 165, 0);
+            }
+        }
+        &:last-child{
+            button{
+                border:red 2px solid;
+                margin-left: 10px;
+                &:hover{
+                background-color: rgba(255, 0, 0, 0.6);
+            }
+            }
+        }
+        button{
+            transition: .3s;
+            padding: 3px;
+            border: orange 2px solid;
+            border-radius: 6px;
+
+            &:hover{
+                background-color: rgba(255, 165, 0, 0.6);
+            }
+            img{
+                width: 36px;
+            }
+        }
     }
 }
