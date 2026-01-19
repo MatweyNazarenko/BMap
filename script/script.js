@@ -8,6 +8,76 @@ const footerRoute = document.getElementById('footerRoute');
 const deleteRoute = document.getElementById('deleteRoute');                      
 const routePanel = document.getElementById('routePanel');
 
+
+
+
+// const closeBtn = document.querySelector('.closeBtn');
+// const helperMenu = document.querySelector('.helper-menu');
+// const leftBtn = document.getElementById('leftBtn');
+// const rightBtn = document.getElementById('rightBtn');
+// const helpText = document.getElementById('helpText');
+// let indexPage = 1;
+// let endPage = 6;
+// //helpMenu
+// function update() {
+//     if (indexPage == 1) {
+//         leftBtn.textContent = 'Нет';
+//         rightBtn.textContent = 'Да';
+//         helpText.textContent = 'Хочешь, я расскажу тебе о сайте?';
+//     } else {
+//         leftBtn.textContent = 'Назад';
+//         rightBtn.textContent = 'Далее';
+//     }
+// }
+
+// update();
+// closeBtn.addEventListener('click', ()=>{
+//     helperMenu.style.display = "none";
+// })
+// leftBtn.addEventListener('click', ()=>{
+//     if(indexPage == 1){
+//         helperMenu.style.display = "none";
+//     }else{
+//         indexPage--
+//         update();
+//     }
+//     if(indexPage == endPage){
+//             rightBtn.style.backgroundColor = '#9790909d';
+//             rightBtn.style.cursor = 'inherit';
+//         }else{
+//             rightBtn.style.backgroundColor = '#fff';
+//             rightBtn.style.cursor = 'pointer';
+//         }
+// })
+
+// rightBtn.addEventListener('click', ()=>{
+//     if(indexPage < endPage){
+//         indexPage++;
+//         console.log(indexPage);
+//         update();
+//     }
+//     if(indexPage == 1){
+
+//     }
+//     if(indexPage == endPage){
+//             rightBtn.style.backgroundColor = '#9790909d';
+//             rightBtn.style.cursor = 'inherit';
+//         }else{
+//             rightBtn.style.backgroundColor = '#fff';
+//             rightBtn.style.cursor = 'pointer';
+//         }
+// })
+
+
+
+
+
+
+
+
+
+
+
 ymaps.ready(['multiRouter.MultiRoute']).then(init);
 
 function getUserLocation(callback) {
