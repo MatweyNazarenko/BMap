@@ -7,66 +7,221 @@ const busRoute = document.getElementById('busRoute');
 const footerRoute = document.getElementById('footerRoute');    
 const deleteRoute = document.getElementById('deleteRoute');                      
 const routePanel = document.getElementById('routePanel');
+const modal = document.querySelectorAll('.modal');
 
 
+const grayBlur = document.querySelector('.grayBlur');
+const closeBtn = document.querySelector('.closeBtn');
+const typeUse = document.getElementById('typeUse');
+const helperContent = document.querySelector('.helper-content');
+const helperAlien = document.querySelector('.helper-alien');
+const leftBtn = document.getElementById('leftBtn');
+const rightBtn = document.getElementById('rightBtn');
+const helpText = document.getElementById('helpText');
+const mapJS = document.getElementById('map');
+const tringle = document.querySelector('#tringle');
+const useBox = document.querySelector('.use-box');
+const useLine = document.querySelector('.use-line');
+let lastModal = null;
+let flag = 0;
+let flag4 = 0;
+let flag6 = 0;
+let indexPage = 1;
+let endPage = 7+1;
+
+function eventPlacemark(placemark, item){
+    placemark.events.add('click', ()=> {
+        modal.forEach(itemD =>{
+            itemD.classList.remove('show');
+        });
+        document.querySelector(`[data-item="${item.dataItem}"]`).classList.add('show');
+        if(flag == 1){
+            indexPage = 4;
+            flag = 2;
+            lastModal = item.dataItem;
+            update(); 
+            // console.log(flag);
+        }
+    });
+
+}
 
 
-// const closeBtn = document.querySelector('.closeBtn');
-// const helperMenu = document.querySelector('.helper-menu');
-// const leftBtn = document.getElementById('leftBtn');
-// const rightBtn = document.getElementById('rightBtn');
-// const helpText = document.getElementById('helpText');
-// let indexPage = 1;
-// let endPage = 6;
-// //helpMenu
-// function update() {
-//     if (indexPage == 1) {
-//         leftBtn.textContent = 'Нет';
-//         rightBtn.textContent = 'Да';
-//         helpText.textContent = 'Хочешь, я расскажу тебе о сайте?';
-//     } else {
-//         leftBtn.textContent = 'Назад';
-//         rightBtn.textContent = 'Далее';
-//     }
-// }
+function update() {
+    // console.log(indexPage);
+    // console.log(flag);
+    console.log(flag6);
+    if(indexPage < 1){
+        helperContent.style.display = "none";
+        helperAlien.style.display = "none";
+        grayBlur.style.display = 'none';
+    }
+    // Текст кнопок
+    if (indexPage == 1) {
+        leftBtn.textContent = 'Нет';
+        rightBtn.textContent = 'Да';
+        helpText.textContent = 'Хочешь, я расскажу тебе о сайте?';
+    } else {
+        leftBtn.textContent = 'Назад';
+        rightBtn.textContent = 'Далее';
+    }
 
-// update();
-// closeBtn.addEventListener('click', ()=>{
-//     helperMenu.style.display = "none";
-// })
-// leftBtn.addEventListener('click', ()=>{
-//     if(indexPage == 1){
-//         helperMenu.style.display = "none";
-//     }else{
-//         indexPage--
-//         update();
-//     }
-//     if(indexPage == endPage){
-//             rightBtn.style.backgroundColor = '#9790909d';
-//             rightBtn.style.cursor = 'inherit';
-//         }else{
-//             rightBtn.style.backgroundColor = '#fff';
-//             rightBtn.style.cursor = 'pointer';
-//         }
-// })
+    // Состояние страницы 1
+    if (indexPage == 1) {
+        grayBlur.style.display = 'none';
+        helperContent.style.top = 'initial';
+        helperContent.style.left = 'initial';
+        helperContent.style.height = '150px';
+    }
 
-// rightBtn.addEventListener('click', ()=>{
-//     if(indexPage < endPage){
-//         indexPage++;
-//         console.log(indexPage);
-//         update();
-//     }
-//     if(indexPage == 1){
+    // Состояние страницы 2
+    if (indexPage == 2) {
+        grayBlur.style.display = 'flex';
+        typeUse.classList.add('disableBlur');
+        typeUse.style.background = '#fff';
+        typeUse.style.padding = '10px';
+        helperContent.style.top = '50px';
+        helperContent.style.left = '0';
+        helperContent.style.height = '170px';
+        helpText.textContent = 'Здесь ты можешь выбрать режим карты. Выбери Показ меток';
+    }
 
-//     }
-//     if(indexPage == endPage){
-//             rightBtn.style.backgroundColor = '#9790909d';
-//             rightBtn.style.cursor = 'inherit';
-//         }else{
-//             rightBtn.style.backgroundColor = '#fff';
-//             rightBtn.style.cursor = 'pointer';
-//         }
-// })
+    // Страница 3 - нажимаем кнопку
+    if (indexPage == 3) {
+        buttonsArr[0].click();
+        useBox.style.zIndex = '12';
+        helperContent.style.top = '100px';
+        helperContent.style.left = '0';
+        helperContent.style.height = '190px';
+        helpText.textContent = 'Это карта. Здесь ты можешь нажимать на метки. Попробуй нажать на любую метку';
+        mapJS.classList.add('disableBlur');
+        if(flag == 0){
+            flag = 1;
+        }
+    }
+    if(indexPage == 6){
+        typeUse.classList.add('disableBlur');
+        typeUse.style.background = '#fff';
+        typeUse.style.padding = '10px';
+        helperContent.style.top = '50px';
+        helperContent.style.left = '0';
+        helperContent.style.height = '170px';
+        helpText.textContent = 'Отлично! Теперь выбери режим Лента Времени';
+        if(buttonsArr[1].classList.contains('active')){
+            flag6 = 1;
+        }else{
+            flag6 = 0;
+        }
+    }
+    if(indexPage == 7){
+        helperContent.style.top = '670px';
+        helperContent.style.left = '-10px';
+        useLine.classList.add('disableBlur');
+        helpText.textContent = 'Здесь ты можешь сортировать метки по времени, взявшись за ранжевый кружок или введя дату в оранжевую панель';
+        helperContent.style.height = '210px';
+    }
+    if(indexPage != 7){
+        useLine.classList.remove('disableBlur');
+        
+    }
+    if(indexPage == 5){
+        useBox.style.zIndex = '12';
+        helperContent.style.top = '500px';
+        helperContent.style.left = '850px';
+        helperContent.style.height = '200px';
+        useBox.classList.add('disableBlur');
+        helpText.textContent = 'Здесь ты можешь скрывать и показывать разные категории меток, нажимая на галочки';
+    }
+    if(indexPage != 5){
+        useBox.classList.remove('disableBlur');
+    }
+    if(indexPage == 4){
+        if(flag4 == 0){
+            flag4 = 1;
+        }
+        tringle.style.right = "310px";
+        tringle.style.transform = "rotate(90deg)";
+        helperContent.style.left = "458px";
+        helperContent.style.height = '210px';
+        helpText.textContent = 'Здесь ты можешь почитать о выбранной метке. А теперь закрой окно нажав на крестик или Escape';
+        modal.forEach(item =>{
+            item.classList.add('disableBlur');
+            item.style.position = "fixed !important"
+        })
+    }
+    if(indexPage != 4){
+        flag4 = 0;
+        tringle.style.right = "-10px";
+        tringle.style.transform = "rotate(270deg)";
+        modal.forEach(item =>{
+            item.classList.remove('disableBlur');
+            item.style.position = "fixed";
+            item.classList.remove('show');
+        })
+    }
+    if(indexPage != 2 && indexPage != 6){
+        typeUse.classList.remove('disableBlur');
+        typeUse.style.background = 'none';
+        typeUse.style.padding = '0';
+    }
+    if(indexPage != 3 && indexPage != 5){
+        useBox.style.zIndex = '9';
+        mapJS.classList.remove('disableBlur');
+        flag = 0;
+    }
+    // Состояние кнопки "Далее"
+    if(indexPage == 3 && flag != 2){
+        rightBtn.setAttribute('disabled', '');
+        rightBtn.style.backgroundColor = '#9790909d';
+        rightBtn.style.cursor = 'default';
+    }else if(indexPage == 4 && flag4 != 2){
+        rightBtn.setAttribute('disabled', '');
+        rightBtn.style.backgroundColor = '#9790909d';
+        rightBtn.style.cursor = 'default';
+    }else if(indexPage == 6 && flag6 != 1){
+        rightBtn.setAttribute('disabled', '');
+        rightBtn.style.backgroundColor = '#9790909d';
+        rightBtn.style.cursor = 'default';
+    }else {
+        rightBtn.removeAttribute('disabled');
+        rightBtn.style.backgroundColor = '#fff';
+        rightBtn.style.cursor = 'pointer';
+    }
+}
+
+update();
+closeBtn.addEventListener('click', ()=>{
+    indexPage = 0;
+    update();
+
+})
+leftBtn.addEventListener('click', ()=>{
+    if(indexPage == 5){
+        document.querySelector(`[data-item="${lastModal}"]`).classList.add('show');
+    }
+    if (indexPage == 1) {
+        indexPage = 0;
+        update();
+    } else {
+        indexPage--;
+        update();
+    }
+    
+})
+
+rightBtn.addEventListener('click', ()=>{
+    if (indexPage < endPage) {
+        indexPage++;
+        update();
+    }
+    if(indexPage >= endPage){
+        indexPage = 0;
+        update();
+    }
+    if (indexPage == endPage-1) {
+        rightBtn.textContent = "Закончить";
+    }
+})
 
 
 
@@ -121,6 +276,7 @@ buttonsArr.forEach((item,i)=>{
         item.addEventListener('click', ()=>{
             hideUse();
             showUse(i);
+            update();
     })
 })
 
@@ -646,26 +802,21 @@ function init(){
     const checkbox = item.querySelector('input[type="checkbox"]');
     if(checkbox){
         let category = checkbox.dataset.category;
-        // document.querySelector('#checkboxButton').addEventListener('click', ()=>{
-        //     if(checkbox.checked){
-        //     if(!placemarksByCategoryOnMap[category]){
-        //         placemarksByCategoryOnMap[category] = [];
-        //     }
-        //     if(categoryPoints[category]){
-        //         categoryPoints[category].forEach(point => {
-        //         let placemark = addPlacemark(point);
-        //         placemark.events.add('click', function (e) {
-        //             document.querySelectorAll('.modal').forEach(item =>{
-        //                 item.classList.remove('show');
-        //             });
-        //             document.querySelector(`[data-item="${point.dataItem}"]`).classList.add('show');
-        //         });
-        //         map.geoObjects.add(placemark);
-        //         placemarksByCategoryOnMap[category].push(placemark);
-        //     });
-        // }
-        //     }
-        // })
+        document.querySelector('#checkboxButton').addEventListener('click', ()=>{
+            if(checkbox.checked){
+            if(!placemarksByCategoryOnMap[category]){
+                placemarksByCategoryOnMap[category] = [];
+            }
+            if(categoryPoints[category]){
+                categoryPoints[category].forEach(point => {
+                let placemark = addPlacemark(point);
+                eventPlacemark(placemark, point);
+                map.geoObjects.add(placemark);
+                placemarksByCategoryOnMap[category].push(placemark);
+            });
+        }
+            }
+        })
         if (checkbox.checked) {
             if(!placemarksByCategoryOnMap[category]){
                 placemarksByCategoryOnMap[category] = [];
@@ -673,18 +824,13 @@ function init(){
             if(categoryPoints[category]){
                 categoryPoints[category].forEach(point => {
                 let placemark = addPlacemark(point);
-                placemark.events.add('click', function (e) {
-                    document.querySelectorAll('.modal').forEach(item =>{
-                        item.classList.remove('show');
-                    });
-                    document.querySelector(`[data-item="${point.dataItem}"]`).classList.add('show');
-                });
+                eventPlacemark(placemark, point);
                 map.geoObjects.add(placemark);
                 placemarksByCategoryOnMap[category].push(placemark);
             });
         }
     }
-            
+
 //checkbox-hide
         checkbox.addEventListener('change', ()=>{
             if(checkbox.checked){
@@ -693,12 +839,7 @@ function init(){
                   }
                 categoryPoints[checkbox.dataset.category].forEach(item =>{
                     let placemark = addPlacemark(item);
-                    placemark.events.add('click', function (e) {
-                    document.querySelectorAll('.modal').forEach(it =>{
-                        it.classList.remove('show');
-                    });
-                    document.querySelector(`[data-item="${item.dataItem}"]`).classList.add('show');
-                    });
+                    eventPlacemark(placemark, item);
                     map.geoObjects.add(placemark);
                     placemarksByCategoryOnMap[category].push(placemark);
                 });
@@ -711,7 +852,7 @@ function init(){
         }
             }
         })
-
+} 
 // // Построение маршрута.
 // // По умолчанию строится автомобильный маршрут.
 // var multiRoute = new ymaps.multiRouter.MultiRoute({   
@@ -768,12 +909,7 @@ function TimelinePoints(year){
         categoryPoints[category].forEach(item => {
         if (item.year <= year) {
             let placemark = addPlacemark(item);
-        placemark.events.add('click', ()=> {
-            document.querySelectorAll('.modal').forEach(item =>{
-                item.classList.remove('show');
-            });
-            document.querySelector(`[data-item="${item.dataItem}"]`).classList.add('show');
-            });
+            eventPlacemark(placemark, item);
         map.geoObjects.add(placemark);
         placemarksByCategoryOnMap[category].push(placemark);
         }
@@ -791,7 +927,6 @@ document.querySelector('#lineButton').addEventListener('click', ()=>{
         TimelinePoints(parseInt(nowYear.value));
     });
 })
-    }
 });
 
     //Местоположение
@@ -822,14 +957,24 @@ document.querySelector('#lineButton').addEventListener('click', ()=>{
 }
 
 //modal
-const modal = document.querySelectorAll('#modal').forEach(item =>{
+    modal.forEach(item =>{
         close = item.querySelector('#close');
         close.addEventListener('click', ()=>{
             item.classList.remove('show');
+            if(flag4 == 1){
+                indexPage++;
+                flag4 = 2;
+                update();
+            }
         });
         document.addEventListener('keydown', (event)=>{
             if(event.key == "Escape"){
                 item.classList.remove('show');
+                if(flag4 == 1){
+                    indexPage++;
+                    flag4 = 2;
+                    update();
+                }
             }
         })
 });

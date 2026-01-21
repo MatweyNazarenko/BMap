@@ -12,6 +12,7 @@
     <link type="Image/x-icon" href="img/favicon.ico" rel="icon">
 </head>
 <body>
+    <div class="grayBlur"></div>
     <header>
         <div class="container">
             <div class="header">
@@ -91,9 +92,8 @@
             </div>
         </div>
     </footer>
-    <!-- <div class="helper-menu">
         <div class="helper-content">
-            <div class="tringle"></div>
+            <div class="tringle" id="tringle"></div>
             <button class="closeBtn"><img src="img/close.svg" alt="close"></button>
             <div class="text-helper">
                 <h2>Помощник</h2>
@@ -112,9 +112,8 @@
             </div>
             <div class="mouse"></div>
         </div>
-    </div> -->
     <div class="modal-window">
-    <div class="modal" id="modal" data-item="it1">
+    <div class="modal" data-item="it1">
         <button class="close" id="close"><img src="img/close.svg" alt="close"></button>
         <div class="content">
             <h2>Белостокско-Минское сражение</h2>
@@ -125,7 +124,7 @@
             <a href="pages/Bel-Min.html">Читать подробнее</a>
         </div>
     </div>
-    <div class="modal" id="modal" data-item="it2">
+    <div class="modal" data-item="it2">
         <button class="close" id="close"><img src="img/close.svg" alt="close"></button>
         <div class="content">
             <h2>Битва за Минск</h2>
@@ -138,7 +137,7 @@
             <a href="pages/Min-battle.html">Читать подробнее</a>
         </div>
     </div>
-    <div class="modal" id="modal" data-item="it3">
+    <div class="modal" data-item="it3">
         <button class="close" id="close"><img src="img/close.svg" alt="close"></button>
         <button class="go" id="go" data-lat="54.335000" data-lon="27.944167"><img src="img/go.svg" alt="go.svg"></button>
         <div class="content">
@@ -160,7 +159,7 @@
             <a href="pages/Xaten.html">Читать подробнее</a>
         </div>
     </div>
-    <div class="modal" id="modal" data-item="it4">
+    <div class="modal" data-item="it4">
         <button class="close" id="close"><img src="img/close.svg" alt="close"></button>
         <button class="go" id="go" data-lat="52.737772" data-lon="29.6649057"><img src="img/go.svg" alt="go.svg"></button>
         <div class="content">
@@ -193,7 +192,7 @@
             <a href="pages/Ola.html">Читать подробнее</a>
         </div>
     </div>
-    <div class="modal" id="modal" data-item="it5">
+    <div class="modal" data-item="it5">
         <button class="close" id="close"><img src="img/close.svg" alt="close"></button>
         <div class="content">
             <h2>Якуб Колас</h2>
@@ -208,7 +207,7 @@
             <a href="pages/Yakub.html">Читать подробнее</a>
         </div>
     </div>
-    <div class="modal" id="modal" data-item="it6">
+    <div class="modal" data-item="it6">
         <button class="close" id="close"><img src="img/close.svg" alt="close"></button>
         <div class="content">
             <h2>Франциск Скорина</h2>
@@ -229,7 +228,7 @@
             <a href="pages/Scarina.html">Читать подробнее</a>
         </div>
     </div>
-    <div class="modal" id="modal" data-item="it7">
+    <div class="modal" data-item="it7">
         <button class="close" id="close"><img src="img/close.svg" alt="close"></button>
         <div class="content">
             <h2>Оборона Брестской крепости</h2>
@@ -251,7 +250,7 @@
             <a href="pages/BrestFortress.html">Читать подробнее</a>
         </div>
     </div>
-    <div class="modal" id="modal" data-item="it8">
+    <div class="modal" data-item="it8">
         <button class="close" id="close"><img src="img/close.svg" alt="close"></button>
         <div class="content">
             <h2>Витебское сражение</h2>
@@ -268,7 +267,7 @@
             <a href="pages/VitBattle.html">Читать подробнее</a>
         </div>
     </div>
-    <div class="modal" id="modal" data-item="it9">
+    <div class="modal" data-item="it9">
         <button class="close" id="close"><img src="img/close.svg" alt="close"></button>
         <div class="content">
             <h2>Могилёвская оборона</h2>
@@ -284,7 +283,7 @@
             <a href="pages/MogArm.html">Читать подробнее</a>
         </div>
     </div>
-    <div class="modal" id="modal" data-item="it10">
+    <div class="modal" data-item="it10">
         <button class="close" id="close"><img src="img/close.svg" alt="close"></button>
         <div class="content">
             <h2>Витебско-Оршанская операция</h2>
@@ -301,7 +300,7 @@
             <a href="pages/Vit-OrshBattle.html">Читать подробнее</a>
         </div>
     </div>
-    <div class="modal" id="modal" data-item="it11">
+    <div class="modal" data-item="it11">
         <button class="close" id="close"><img src="img/close.svg" alt="close"></button>
         <div class="content">
             <h2>Гомельско-Речицкая наступательная операция</h2>
@@ -318,7 +317,7 @@
             <a href="pages/GomelBattle.html">Читать подробнее</a>
         </div>
     </div>
-    <div class="modal" id="modal" data-item="it12">
+    <div class="modal" data-item="it12">
         <button class="close" id="close"><img src="img/close.svg" alt="close"></button>
         <div class="content">
             <h2>Полоцкая наступательная операция</h2>
@@ -334,7 +333,7 @@
             <a href="pages/PolBattle.html">Читать подробнее</a>
         </div>
     </div>
-    <div class="modal" id="modal" data-item="it13">
+    <div class="modal" data-item="it13">
         <button class="close" id="close"><img src="img/close.svg" alt="close"></button>
         <div class="content">
             <h2>Бобруйская операция</h2>
@@ -352,7 +351,7 @@
             <a href="pages/Bobr.html">Читать подробнее</a>
         </div>
     </div>
-    <div class="modal" id="modal" data-item="it14">
+    <div class="modal" data-item="it14">
         <button class="close" id="close"><img src="img/close.svg" alt="close"></button>
         <div class="content">
             <h2>Рогачёвско-Жлобинская операция</h2>
@@ -368,7 +367,7 @@
             <a href="pages/RogJlBattle.html">Читать подробнее</a>
         </div>
     </div>
-    <div class="modal" id="modal" data-item="it15">
+    <div class="modal" data-item="it15">
         <button class="close" id="close"><img src="img/close.svg" alt="close"></button>
         <div class="content">
             <h2>Могилёвская операция</h2>
@@ -385,7 +384,7 @@
             <a href="pages/Mog.html">Читать подробнее</a>
         </div>
     </div>
-    <div class="modal" id="modal" data-item="it16">
+    <div class="modal" data-item="it16">
         <button class="close" id="close"><img src="img/close.svg" alt="close"></button>
         <button class="go" id="go" data-lat="54.019166669906" data-lon="27.89777777982"><img src="img/go.svg" alt="go.svg"></button>
         <div class="content">
@@ -406,7 +405,7 @@
             <a href="pages/kurMemr.html">Читать подробнее</a>
         </div>
     </div>
-    <div class="modal" id="modal" data-item="it17">
+    <div class="modal" data-item="it17">
         <button class="close" id="close"><img src="img/close.svg" alt="close"></button>
         <button class="go" id="go" data-lat="52.083314448631704" data-lon="23.65957176582804"><img src="img/go.svg" alt="go.svg"></button>
         <div class="content">
@@ -428,7 +427,7 @@
             <a href="pages/BrestFortMemr.html">Читать подробнее</a>
         </div>
     </div>
-    <div class="modal" id="modal" data-item="it18">
+    <div class="modal" data-item="it18">
         <button class="close" id="close"><img src="img/close.svg" alt="close"></button>
         <button class="go" id="go" data-lat="52.03854" data-lon="29.237590"><img src="img/go.svg" alt="go.svg"></button>
         <div class="content">
@@ -451,7 +450,7 @@
             <a href="pages/KurMor.html">Читать подробнее</a>
         </div>
     </div>
-    <div class="modal" id="modal" data-item="it19">
+    <div class="modal" data-item="it19">
         <button class="close" id="close"><img src="img/close.svg" alt="close"></button>
         <div class="content">
             <h2>Марк Захарович Шагал</h2>
@@ -475,7 +474,7 @@
             <a href="pages/MarkShagal.html">Читать подробнее</a>
         </div>
     </div>
-    <div class="modal" id="modal" data-item="it20">
+    <div class="modal" data-item="it20">
         <button class="close" id="close"><img src="img/close.svg" alt="close"></button>
         <div class="content">
             <h2>Игнатий Ипполитович Домейко</h2>
@@ -501,7 +500,7 @@
             <a href="pages/Dom.html">Читать подробнее</a>
         </div>
     </div>
-    <div class="modal" id="modal" data-item="it21">
+    <div class="modal" data-item="it21">
         <button class="close" id="close"><img src="img/close.svg" alt="close"></button>
         <div class="content">
             <h2>Тадеуш Костюшко</h2>

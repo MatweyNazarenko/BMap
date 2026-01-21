@@ -157,12 +157,13 @@ header{
                 }
         }
         input[type="range"]{
+            position: relative;
+            z-index: 2;
             appearance: none;
             background: transparent;
             width: 100%;
             height: 100%;
             cursor: pointer;
-            z-index: 100;
             &::-webkit-slider-thumb {
                 -webkit-appearance: none;
                 appearance: none;
@@ -173,7 +174,6 @@ header{
                 height: 24px;
                 margin-top: -6px;
                 position: relative;
-                z-index: 10;
                 bottom: -4px;
             }
 
@@ -215,7 +215,7 @@ header{
     display: none;
     scrollbar-width: thin;
     scrollbar-color: #009739 #ffffff;
-    z-index: 100000;
+    z-index: 9;
     .close{
         width: 1.5rem;
         position: absolute;
@@ -388,15 +388,12 @@ footer{
         }
     }
 }
-
-.helper-menu{
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    display: flex;
-    align-items: end;
     .helper-content{
-        position: relative;
+        transition: 0.3s;
+        position: fixed;
+        z-index: 100;
+        bottom: 20px;
+        right: 100px;
         box-shadow: 0 1px 10px #0006;
         background-color: #fff;
         width: 320px;
@@ -430,7 +427,7 @@ footer{
             }
             p{
                 font-size: 1.1rem;
-                margin-bottom: 20px;
+                margin-bottom: 15px;
             }
             .controlBtn{
                 display: flex;
@@ -455,9 +452,11 @@ footer{
             }
         }
         }
-    }
     .helper-alien{
-        position: relative;
+        position: fixed;
+        z-index: 100;
+        bottom: 20px;
+        right: 20px;
         img{
             width: 92px;
         }
@@ -484,3 +483,17 @@ footer{
             left: 35px;
         }
     }
+.grayBlur{
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 10;
+    display: none;
+
+}
+.disableBlur{
+    position: relative;
+    z-index: 11;
+}
