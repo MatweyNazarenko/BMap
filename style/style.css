@@ -103,10 +103,11 @@ body {
 .container {
   max-width: 1300px;
   margin: 0 auto;
-  padding: 0 15px;
+  padding: 0 20px;
 }
 
 header {
+  text-align: center;
   background-color: #009739;
   padding: 1.5rem 0;
   display: flex;
@@ -308,7 +309,7 @@ header h1 {
   display: none;
   scrollbar-width: thin;
   scrollbar-color: #009739 #ffffff;
-  z-index: 9;
+  z-index: 15;
 }
 .modal .close {
   width: 1.5rem;
@@ -442,7 +443,7 @@ footer .info-footer p:first-child {
   position: absolute;
   top: 60px;
   right: 350px;
-  z-index: 100;
+  z-index: 10;
   transition: 0.3s;
 }
 .routePanel li .active {
@@ -572,11 +573,211 @@ footer .info-footer p:first-child {
   position: fixed;
   inset: 0;
   background: rgba(0, 0, 0, 0.6);
-  z-index: 10;
+  z-index: 20;
   display: none;
 }
 
 .disableBlur {
   position: relative;
-  z-index: 11;
+  z-index: 30;
+}
+
+@media (max-width: 1320px) {
+  .helper-alien {
+    display: none;
+  }
+  .helper-content {
+    display: none;
+  }
+  .mapMenu .use-line {
+    width: 95%;
+    left: initial;
+  }
+  .mapMenu .use-line .nowYear {
+    left: 46.71%;
+  }
+  .mapMenu .use-line .linesContainer .yearText {
+    font-size: 1.05rem;
+  }
+  .mapJS {
+    width: 90%;
+  }
+  .mapMenu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .useTool {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .info .collection img {
+    max-width: 400px;
+  }
+}
+@media (max-width: 1200px) {
+  .modal {
+    width: 400px;
+  }
+  .mapMenu .use-line .nowYear {
+    left: 46.31%;
+  }
+}
+@media (max-width: 1024px) {
+  .routePanel {
+    right: 210px;
+  }
+  .modal {
+    width: 360px;
+  }
+  .modal .content h2 {
+    font-size: 1.8rem;
+  }
+  .mapMenu .use-line .nowYear {
+    left: 45.71%;
+  }
+}
+@media (max-width: 865px) {
+  .routePanel {
+    right: 130px;
+  }
+  .mapMenu .use-line .nowYear {
+    left: 44.81%;
+  }
+  .mapMenu .use-box {
+    width: 360px;
+  }
+  .mapMenu .use-box ul li {
+    font-size: 1.05rem;
+  }
+  .info a {
+    right: 30px;
+    background-color: rgba(0, 124, 48, 0.76);
+    bottom: 40px;
+  }
+  .info .collection img {
+    max-width: 350px;
+  }
+}
+@media (max-width: 740px) {
+  .routePanel {
+    right: 300px;
+    top: 110px;
+  }
+  .mapMenu .use-box {
+    bottom: 5px;
+  }
+  .modal {
+    width: 100%;
+  }
+  .oneCol img {
+    max-width: 600px !important;
+  }
+  .info .collection img {
+    max-width: 300px;
+  }
+}
+@media (max-width: 630px) {
+  .mapSection {
+    padding: 2rem 0 calc(2rem + 50px) 0;
+  }
+  .mapMenu .use-box {
+    width: 91%;
+    right: initial;
+    bottom: -70px;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+  }
+  .mapMenu .use-box ul li {
+    font-size: 1.3rem;
+  }
+  .mapMenu .use-line {
+    bottom: -25px;
+  }
+  .mapMenu .use-line .nowYear {
+    left: 42.11%;
+  }
+  .oneCol img {
+    max-width: 500px !important;
+  }
+  .info .collection img {
+    max-width: 250px;
+  }
+}
+@media (max-width: 530px) {
+  .mapMenu .use-box ul li {
+    font-size: 1.15rem;
+  }
+  .mapMenu .use-line .nowYear {
+    left: 41.51%;
+  }
+  .oneCol img {
+    max-width: 400px !important;
+  }
+  header h1 {
+    font-size: 1.9rem;
+  }
+  .info__mainText {
+    font-size: 1.8rem;
+  }
+  .info .collection {
+    display: flex;
+    flex-direction: column;
+  }
+  .info .collection img {
+    max-width: 400px;
+  }
+}
+@media (max-width: 420px) {
+  .mapMenu .use-box ul li {
+    font-size: 1.05rem;
+  }
+  .mapMenu .use-line .nowYear {
+    left: 38.91%;
+  }
+  .oneCol img {
+    max-width: 330px !important;
+  }
+  .info .collection {
+    display: flex;
+    flex-direction: column;
+  }
+  .info .collection img {
+    max-width: 320px;
+  }
+}
+@media (max-width: 390px) {
+  .mapMenu .typeUse {
+    flex-direction: column;
+    width: 100%;
+    gap: 20px;
+  }
+  .mapMenu .typeUse li button {
+    width: 100%;
+  }
+  .mapMenu .use-box ul li {
+    font-size: 0.9rem;
+  }
+  .mapMenu .use-line .nowYear {
+    left: 37.71%;
+  }
+}
+@media (max-width: 360px) {
+  .oneCol img {
+    max-width: 300px !important;
+  }
+  header h1 {
+    font-size: 1.6rem;
+  }
+  .info__mainText {
+    font-size: 1.5rem;
+  }
+  .info .collection {
+    display: flex;
+    flex-direction: column;
+  }
+  .info .collection img {
+    max-width: 300px;
+  }
 }/*# sourceMappingURL=style.css.map */
