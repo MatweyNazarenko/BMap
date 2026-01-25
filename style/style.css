@@ -85,6 +85,10 @@ legend {
   display: block;
 }
 
+body {
+  overflow-x: hidden;
+}
+
 .hide {
   display: none !important;
 }
@@ -625,9 +629,6 @@ footer .info-footer p:first-child {
   }
 }
 @media (max-width: 1024px) {
-  .modal {
-    padding: 15px 50px 50px 50px;
-  }
   .routePanel {
     right: 210px;
   }

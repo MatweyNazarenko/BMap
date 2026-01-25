@@ -34,6 +34,9 @@ function eventPlacemark(placemark, item){
         modal.forEach(itemD =>{
             itemD.classList.remove('show');
         });
+        if(window.screen.width >= 740){
+            document.body.style.overflowY  = "hidden";
+        }
         document.querySelector(`[data-item="${item.dataItem}"]`).classList.add('show');
         if(flag == 1){
             indexPage = 4;
@@ -960,6 +963,9 @@ document.querySelector('#lineButton').addEventListener('click', ()=>{
     modal.forEach(item =>{
         close = item.querySelector('#close');
         close.addEventListener('click', ()=>{
+            if(window.screen.width >= 740){
+                document.body.style.overflowY  = "initial";
+            }
             item.classList.remove('show');
             if(flag4 == 1){
                 indexPage++;
@@ -969,6 +975,9 @@ document.querySelector('#lineButton').addEventListener('click', ()=>{
         });
         document.addEventListener('keydown', (event)=>{
             if(event.key == "Escape"){
+                if(window.screen.width >= 740){
+                    document.body.style.overflowY  = "initial";
+                }
                 item.classList.remove('show');
                 if(flag4 == 1){
                     indexPage++;
