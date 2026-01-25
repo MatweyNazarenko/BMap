@@ -555,6 +555,9 @@ footer{
 }
 
 @media(max-width:1024px){
+    .modal{
+        padding: 15px 50px 30px 50px;
+    }
     .routePanel{
         right: 210px;
     }
