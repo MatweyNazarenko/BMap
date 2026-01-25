@@ -741,13 +741,16 @@ footer .info-footer p:first-child {
   .routePanel {
     right: 100px;
   }
+  .mapMenu .use-box ul li {
+    font-size: 1.04rem;
+  }
 }
 @media (max-width: 420px) {
   .routePanel {
     right: 70px;
   }
   .mapMenu .use-box ul li {
-    font-size: 1.05rem;
+    font-size: 0.9rem;
   }
   .mapMenu .use-line .nowYear {
     left: 38.91%;
