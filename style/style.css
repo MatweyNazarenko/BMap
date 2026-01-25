@@ -745,7 +745,7 @@ footer .info-footer p:first-child {
     right: 100px;
   }
   .mapMenu .use-box ul li {
-    font-size: 1.04rem;
+    font-size: 1rem;
   }
 }
 @media (max-width: 420px) {
