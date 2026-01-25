@@ -679,6 +679,9 @@ footer .info-footer p:first-child {
   }
 }
 @media (max-width: 630px) {
+  .routePanel {
+    right: 240px;
+  }
   .mapSection {
     padding: 2rem 0 calc(2rem + 50px) 0;
   }
@@ -729,7 +732,20 @@ footer .info-footer p:first-child {
     max-width: 400px;
   }
 }
+@media (max-width: 580px) {
+  .routePanel {
+    right: 150px;
+  }
+}
+@media (max-width: 480px) {
+  .routePanel {
+    right: 100px;
+  }
+}
 @media (max-width: 420px) {
+  .routePanel {
+    right: 70px;
+  }
   .mapMenu .use-box ul li {
     font-size: 1.05rem;
   }
@@ -748,6 +764,10 @@ footer .info-footer p:first-child {
   }
 }
 @media (max-width: 390px) {
+  .routePanel {
+    top: 160px;
+    right: 45px;
+  }
   .mapMenu .typeUse {
     flex-direction: column;
     width: 100%;
@@ -764,6 +784,9 @@ footer .info-footer p:first-child {
   }
 }
 @media (max-width: 360px) {
+  .routePanel {
+    right: 36px;
+  }
   .oneCol img {
     max-width: 300px !important;
   }
