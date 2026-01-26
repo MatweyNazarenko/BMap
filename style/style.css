@@ -149,6 +149,7 @@ header h1 {
   background-color: rgba(0, 124, 48, 0.774);
 }
 .mapMenu .use-box {
+  flex-direction: column;
   border-radius: 12px;
   position: absolute;
   bottom: 10px;
@@ -282,6 +283,58 @@ header h1 {
   width: 24px;
   height: 24px;
   bottom: -4px;
+}
+.mapMenu .use-tasks {
+  justify-content: space-between;
+  position: absolute;
+  bottom: 0;
+  left: -5%;
+  width: 110%;
+  height: 90vh;
+  background-color: #ffffff;
+  display: flex;
+  padding: 30px;
+}
+.mapMenu .use-tasks .buttonsBar {
+  display: flex;
+  flex-direction: column;
+  gap: 20px 0;
+}
+.mapMenu .use-tasks .buttonsBar button {
+  font-size: 1.15rem;
+  font-weight: 600;
+  background-color: rgba(230, 179, 40, 0.596);
+  border-radius: 10px;
+  padding: 5px 10px;
+  cursor: pointer;
+  border: rgba(255, 165, 0, 0.836) solid 2px;
+}
+.mapMenu .use-tasks .buttonsBar button:hover {
+  background-color: rgb(255, 187, 0);
+  border-radius: 10px;
+  padding: 5px 10px;
+  cursor: pointer;
+  border: rgba(255, 165, 0, 0.836) solid 2px;
+}
+.mapMenu .use-tasks .buttonsBar .active {
+  background-color: rgb(255, 187, 0);
+  border-radius: 10px;
+  padding: 5px 10px;
+  cursor: pointer;
+  border: rgba(255, 165, 0, 0.836) solid 2px;
+}
+.mapMenu .use-tasks .boxTasks {
+  box-shadow: 0 1px 10px rgba(56, 56, 56, 0.164);
+  width: 85%;
+  height: 100%;
+}
+.mapMenu .use-tasks .boxTasks .itemTasks {
+  height: 100%;
+  width: 90%;
+  display: none;
+}
+.mapMenu .use-tasks .boxTasks .active {
+  display: flex;
 }
 
 .mapJS {

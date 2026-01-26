@@ -1,5 +1,7 @@
 //typeUse
 const buttonsArr = document.querySelectorAll('#typeUse li button');
+const buttonsTasks = document.querySelectorAll('.buttonsBar button');
+const itemTasks = document.querySelectorAll('.itemTasks');
 const useMenus = document.querySelectorAll('.useVaried');
 const goBtn = document.querySelectorAll('.modal #go');
 const carRoute = document.getElementById('carRoute');
@@ -8,8 +10,6 @@ const footerRoute = document.getElementById('footerRoute');
 const deleteRoute = document.getElementById('deleteRoute');                      
 const routePanel = document.getElementById('routePanel');
 const modal = document.querySelectorAll('.modal');
-
-
 const grayBlur = document.querySelector('.grayBlur');
 const closeBtn = document.querySelector('.closeBtn');
 const typeUse = document.getElementById('typeUse');
@@ -28,7 +28,6 @@ let flag4 = 0;
 let flag6 = 0;
 let indexPage = 1;
 let endPage = 7+1;
-
 function eventPlacemark(placemark, item){
     placemark.events.add('click', ()=> {
         modal.forEach(itemD =>{
@@ -48,7 +47,7 @@ function eventPlacemark(placemark, item){
 
 
 function update() {
-    console.log(indexPage);
+    // console.log(indexPage);
     // console.log(flag);
     // console.log(flag6);
     if(indexPage < 1){
@@ -230,9 +229,26 @@ rightBtn.addEventListener('click', ()=>{
 
 
 
-
-
-
+function hideTasks(){
+    itemTasks.forEach(item =>{
+        item.classList.remove('active');
+    });
+    buttonsTasks.forEach(item =>{
+        item.classList.remove('active');
+    });
+}
+function showTasks(i=0){
+    itemTasks[i].classList.add('active');
+    buttonsTasks[i].classList.add('active');
+}
+hideTasks();
+showTasks();
+buttonsTasks.forEach((item, i, arr) =>{
+    item.addEventListener('click', ()=>{
+        hideTasks();
+        showTasks(i);
+    })
+})
 
 ymaps.ready(['multiRouter.MultiRoute']).then(init);
 
@@ -269,7 +285,8 @@ function hideUse(){
 }
 function showUse(i=0){
     buttonsArr[i].classList.add('active');
-    useMenus[i].style.display = "block";
+        useMenus[i].style.display = "flex";
+    
 }
 hideUse();
 showUse();
