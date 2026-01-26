@@ -48,9 +48,9 @@ function eventPlacemark(placemark, item){
 
 
 function update() {
-    // console.log(indexPage);
+    console.log(indexPage);
     // console.log(flag);
-    console.log(flag6);
+    // console.log(flag6);
     if(indexPage < 1){
         helperContent.style.display = "none";
         helperAlien.style.display = "none";
@@ -125,6 +125,7 @@ function update() {
         
     }
     if(indexPage == 5){
+        buttonsArr[0].click();
         useBox.style.zIndex = '12';
         helperContent.style.top = '500px';
         helperContent.style.left = '850px';

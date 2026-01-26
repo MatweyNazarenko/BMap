@@ -583,7 +583,7 @@ footer .info-footer p:first-child {
 
 .disableBlur {
   position: relative;
-  z-index: 30;
+  z-index: 30 !important;
 }
 
 @media (max-width: 1320px) {
