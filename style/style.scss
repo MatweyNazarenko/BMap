@@ -236,7 +236,7 @@ header{
             height: 100%;
             .itemTasks{
                 height: 100%;
-                width: 90%;
+                width: 100%;
                 display: none;
             }
             .active{
@@ -554,7 +554,14 @@ footer{
     position: relative;
     z-index: 30 !important;
 }
-
+@media(max-width: 1900px){
+    .helper-alien{
+        display: none;
+    }
+    .helper-content{
+        display: none;
+    }
+}
 @media(max-width:1320px){
     .helper-alien{
         display: none;

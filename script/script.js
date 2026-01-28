@@ -295,6 +295,11 @@ buttonsArr.forEach((item,i)=>{
             hideUse();
             showUse(i);
             update();
+            if(i == 2){
+                routePanel.style.zIndex = "-1";
+            }else{
+                routePanel.style.zIndex = "10";
+            }
     })
 })
 

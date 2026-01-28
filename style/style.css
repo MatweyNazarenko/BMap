@@ -330,7 +330,7 @@ header h1 {
 }
 .mapMenu .use-tasks .boxTasks .itemTasks {
   height: 100%;
-  width: 90%;
+  width: 100%;
   display: none;
 }
 .mapMenu .use-tasks .boxTasks .active {
@@ -639,6 +639,14 @@ footer .info-footer p:first-child {
   z-index: 30 !important;
 }
 
+@media (max-width: 1900px) {
+  .helper-alien {
+    display: none;
+  }
+  .helper-content {
+    display: none;
+  }
+}
 @media (max-width: 1320px) {
   .helper-alien {
     display: none;
