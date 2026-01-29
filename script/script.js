@@ -252,22 +252,36 @@ buttonsTasks.forEach((item, i, arr) =>{
 
 ymaps.ready(['multiRouter.MultiRoute']).then(init);
 
-function getUserLocation(callback) {
+function getUserByIP(fn) {
+    fetch('https://ipapi.co/json/')
+    .then(res => res.json())
+    .then(data => {
+        const userPosition = [data.latitude, data.longitude];
+        fn(userPosition);
+        console.log(2);
+    })
+    .catch(() => {
+        console.log("Местоположения нет ни одним способом");
+    });
+}
+
+function getUserLocation(fn) {
     if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(
             (position) => {
                 const userPosiiton = [position.coords.latitude, position.coords.longitude];
-                if(callback) {
-                    callback(userPosiiton);
-                }
+                // if(fn) {
+                    fn(userPosiiton);
+                    console.log(1);
+                // }
             },
             (err) => {
                 console.log("Ошибка геолокации:", err.message);
-                console.warn("Не удалось определить ваше местоположение!");
+                getUserByIP(fn);
             }
         );
-    } else {
-        alert("Геолокация не поддерживается вашим браузером!");
+    }else {
+        getUserByIP(fn);
     }
 }
 
@@ -756,8 +770,6 @@ function init(){
     // Включаем измеритель расстояний, активирующийся при
     // щелчке левой кнопкой мыши.
     // .enable('ruler');
-
-
 
     getUserLocation(function(userPosition){
         goBtn.forEach(item =>{
