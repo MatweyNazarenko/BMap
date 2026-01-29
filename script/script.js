@@ -253,17 +253,17 @@ buttonsTasks.forEach((item, i, arr) =>{
 ymaps.ready(['multiRouter.MultiRoute']).then(init);
 
 
-function getUserByIP(fn) {
-    fetch('https://ipapi.co/8.8.8.8/json/')
-        .then(res => res.json())
-        .then(data => {
-            const userPosition = [data.latitude, data.longitude];
-            fn(userPosition);
-        })
-        .catch(err => {
-            console.log("Не сработал ни один из способов");
-        });
-}
+// function getUserByIP(fn) {
+//     fetch('https://ipapi.co/8.8.8.8/json/')
+//         .then(res => res.json())
+//         .then(data => {
+//             const userPosition = [data.latitude, data.longitude];
+//             fn(userPosition);
+//         })
+//         .catch(err => {
+//             console.log("Не сработал ни один из способов");
+//         });
+// }
 
 function getUserLocation(fn) {
     if (navigator.geolocation) {
@@ -276,11 +276,8 @@ function getUserLocation(fn) {
             },
             (err) => {
                 console.log("Ошибка геолокации:", err.message);
-                getUserByIP(fn);
             }
         );
-    }else {
-        getUserByIP(fn);
     }
 }
 
