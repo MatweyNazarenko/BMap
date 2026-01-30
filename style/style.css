@@ -753,6 +753,14 @@ footer .info-footer p:first-child {
   .mapSection {
     padding: 2rem 0 calc(2rem + 50px) 0;
   }
+  .mapMenu .typeUse {
+    flex-direction: column;
+    width: 100%;
+    gap: 20px;
+  }
+  .mapMenu .typeUse li button {
+    width: 100%;
+  }
   .mapMenu .use-box {
     width: 91%;
     right: initial;

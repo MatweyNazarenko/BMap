@@ -265,6 +265,21 @@ ymaps.ready(['multiRouter.MultiRoute']).then(init);
 //         });
 // }
 
+
+// function getUserByIP(fn) {
+//     fetch('https://ipinfo.io/json')
+//         .then(res => res.json())
+//         .then(data => {
+//             const [lat, lon] = data.loc.split(',').map(Number);
+//             const userPosition = [lat, lon];
+//             fn(userPosition);
+//         })
+//         .catch(err => {
+//              console.log("Не сработал ни один из способов" + err);
+//         });
+// }
+
+
 function getUserLocation(fn) {
     if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(
