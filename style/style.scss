@@ -96,6 +96,7 @@ header{
         }
     }
     .use-line{
+        display: none;
         position: absolute;
         height: 56px;
         width: 100%;
@@ -200,7 +201,7 @@ header{
         width: 110%;
         height: 90vh;
         background-color: #ffffff;
-        display: flex;
+        display: none;
         padding: 30px;
         .buttonsBar{
             display: flex;
