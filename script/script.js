@@ -149,7 +149,7 @@ function update() {
             item.style.position = "fixed !important"
         })
     }
-    if(indexPage != 4){
+    if(indexPage != 4 && indexPage != 0){
         flag4 = 0;
         tringle.style.right = "-10px";
         tringle.style.transform = "rotate(270deg)";
@@ -606,6 +606,20 @@ let categoryPoints = {
         dataItem: "it21",
         year: 1746
     }
+    ],
+    category4: [
+    {
+        lat: 54.097702070500326,
+        lon: 28.316955000000014,
+        name: "Белорусский автомобильный завод",
+        time: "1948 год",
+        iconLayout: 'default#image',
+        iconImageHref: 'img/factory.svg',
+        iconImageSize: [20,20],
+        iconImageOffset: [-10,0],
+        dataItem: "it22",
+        year: 1948
+    }
     ]
 };
 
@@ -769,8 +783,6 @@ function init(){
     // }, function () {
     //     console.error('Не удалось загрузить регионы Беларуси');
     // });
-
-
 
 
     // Отключаем некоторые включенные по умолчанию поведения:
