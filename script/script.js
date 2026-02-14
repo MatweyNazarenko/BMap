@@ -619,7 +619,19 @@ let categoryPoints = {
         iconImageOffset: [-10,0],
         dataItem: "it22",
         year: 1948
-    }
+    },
+    {
+        lat: 52.44156642266283,
+        lon: 31.005239091970658,
+        name: "Кондитерская фабрика «Спартак»",
+        time: "1924 год",
+        iconLayout: 'default#image',
+        iconImageHref: 'img/factory.svg',
+        iconImageSize: [20,20],
+        iconImageOffset: [-10,0],
+        dataItem: "it23",
+        year: 1924
+    },
     ]
 };
 
