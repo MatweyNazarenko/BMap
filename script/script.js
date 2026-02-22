@@ -632,6 +632,18 @@ let categoryPoints = {
         dataItem: "it23",
         year: 1924
     },
+    {
+        lat: 53.88686192370777,
+        lon: 27.577844978419446,
+        name: "Кондитерская фабрика «Коммунарка»",
+        time: "1905 год",
+        iconLayout: 'default#image',
+        iconImageHref: 'img/factory.svg',
+        iconImageSize: [20,20],
+        iconImageOffset: [-10,0],
+        dataItem: "it24",
+        year: 1905
+    },
     ]
 };
 

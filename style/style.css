@@ -772,11 +772,11 @@ footer .info-footer p:first-child {
   .mapMenu .use-box ul li {
     font-size: 1.3rem;
   }
-  .mapMenu .use-line {
-    bottom: -25px;
-  }
   .mapMenu .use-line .nowYear {
     left: 42.11%;
+  }
+  .mapMenu .use-line {
+    bottom: -25px;
   }
   .oneCol img {
     max-width: 500px !important;
