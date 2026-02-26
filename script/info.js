@@ -15,3 +15,25 @@ document.querySelector('.arrow-up').addEventListener('click',()=>{
             behavior: 'smooth'
         });
 });
+
+
+// ymaps.ready(init);
+
+// function init(){
+//     if (!ymaps.panorama.isSupported()) {
+//         alert("Панорамы не поддерживаются");
+//     }
+
+
+//     let locateRan = ymaps.panorama.locate([55.83403, 37.623370]);
+
+
+//     locateRan.then(function (panoramas){
+//         if (panoramas.length){
+//             new ymaps.panorama.Player(
+//                 'tour',
+//                 panoramas[0]
+//             )
+//         }
+//     })
+// }
