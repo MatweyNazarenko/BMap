@@ -85,6 +85,10 @@ legend {
   display: block;
 }
 
+:root {
+  --gapSlide: 20px;
+}
+
 body {
   overflow-x: hidden;
 }
@@ -895,4 +899,119 @@ footer .info-footer p:first-child {
 }
 .tour div {
   height: 100%;
+}
+
+.sliderBox {
+  position: relative;
+}
+.sliderBox .arrow-prev {
+  left: -2.5%;
+}
+.sliderBox .arrow-prev img {
+  transform: rotate(-90deg);
+}
+.sliderBox .arrow-next {
+  right: calc(-2.5% - 10px);
+}
+.sliderBox .arrow-next img {
+  transform: rotate(90deg);
+}
+.sliderBox .arrow {
+  transform: translate(0, -50%);
+  top: 50%;
+  z-index: 10;
+  position: absolute;
+}
+.sliderBox .arrow img {
+  width: 35px;
+}
+
+.mySwiper .swiper-wrapper .swiper-slide {
+  cursor: pointer;
+  padding: 20px 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 5px 0;
+}
+.mySwiper .swiper-wrapper .swiper-slide h3 {
+  font-size: 1.3rem;
+  font-weight: 700;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+}
+.mySwiper .swiper-wrapper .swiper-slide p {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  font-size: 1.05rem;
+  font-weight: 400;
+}
+.mySwiper .swiper-wrapper .swiper-slide img {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  height: 400px;
+}
+
+.modalHeroes {
+  display: block;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 100;
+}
+.modalHeroes .modalBox {
+  max-width: 700px;
+  max-height: 50vh;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: #009739 #ffffff;
+  scroll-behavior: smooth;
+  background-color: #fff;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 30px;
+  border-radius: 10px;
+}
+.modalHeroes .modalBox .modalContent button {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+.modalHeroes .modalBox .modalContent button img {
+  width: 25px;
+}
+.modalHeroes .modalBox .modalContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+.modalHeroes .modalBox .modalContent .about {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+}
+.modalHeroes .modalBox .modalContent .about h3 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  max-width: 700px;
+}
+.modalHeroes .modalBox .modalContent .about span {
+  font-weight: 600;
+}
+.modalHeroes .modalBox .modalContent p {
+  font-size: 1.05rem;
+  font-weight: 400;
+  max-width: 700px;
 }/*# sourceMappingURL=style.css.map */

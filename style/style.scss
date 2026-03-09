@@ -1,4 +1,10 @@
 @import 'reset';
+// :root{
+//     --gapSlide: 10px;
+// }
+:root{
+    --gapSlide: 20px;
+}
 body{
     overflow-x: hidden;
 }
@@ -912,5 +918,189 @@ footer{
     margin-top: 30px;
     div{
         height: 100%;
+    }
+}
+// .sliderBox{
+//     position: relative;
+//     .arrow{
+//         cursor: pointer;
+//         top: 50%;
+//         transform: translate(0, -50%);
+//         position: absolute;
+//         display: flex;
+//         width: 20px;
+//         height: 20px;
+//         background-color: lightseagreen;
+//         z-index: 11;
+//     }
+//     .arrow-left{
+//         left: -40px;
+//     }
+//     .arrow-right{
+//         right: -40px;
+//     }
+//     .line{
+//         margin-top: 20px;
+//         width: 100%;
+//         height: 10px;
+//         border: #000 solid 1px;
+//         position: relative;
+//         border-radius: 10px;
+//         .gray{
+//             position: absolute;
+//             top: 0;
+//             left: 0;
+//             background-color: #5c5c5c;
+//             width: 25%;
+//             height: 100%;
+//         }
+//     }
+// }
+// .slider{
+//     overflow: hidden;
+//     .sliderMove{
+//         gap: var(--gapSlide);
+//         display: flex;
+//         align-items: center;
+//         transition: .5s;
+//     }
+//     .slide{
+//         user-select: none;
+//         transition: .5s;
+//         width: calc(25% - var(--gapSlide));
+//         flex: 0 0 auto; 
+//         display: flex;
+//         flex-direction: column;
+//         align-items: center;
+//         justify-content: center;
+//         h3{
+//             user-select: none;
+//             margin: 10px 0;
+//             font-size: 1.25rem;
+//             font-weight: 700;
+//         }
+//         p{
+//             user-select: none;
+//             font-size: 1.05rem;
+//             font-weight: 400;
+//         }
+//         img{
+//             user-select: none;
+//             pointer-events: none;
+//         }
+//     }
+// }
+
+
+
+//slider
+.sliderBox{
+    position: relative;
+    .arrow-prev{
+        left: -2.5%;
+        img{
+            transform: rotate(-90deg);
+        }
+    }
+    .arrow-next{
+        right: calc(-2.5% - 10px);
+        img{
+            transform: rotate(90deg);
+        }
+    }
+    .arrow{
+        transform: translate(0, -50%);
+        top: 50%;
+        z-index: 10;
+        position: absolute;
+        img{
+            width: 35px;
+        }
+    }
+}
+.mySwiper{
+    .swiper-wrapper{
+        .swiper-slide{
+            cursor: pointer;
+            padding: 20px 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 5px 0;
+            h3{
+                font-size: 1.3rem;
+                font-weight: 700;
+                user-select: none;
+            }
+            p{
+                user-select: none;
+                font-size: 1.05rem;
+                font-weight: 400;
+            }
+            img{
+                user-select: none;
+                height: 400px;
+            }
+        }
+    }
+}
+.modalHeroes{
+    display: block;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 100;
+    .modalBox{
+        max-width: 700px;
+        max-height: 50vh;
+        overflow-y: auto;
+        scrollbar-width: thin;
+        scrollbar-color: #009739 #ffffff;
+        scroll-behavior: smooth;
+        background-color: #fff;
+        position: fixed ;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        padding: 30px;
+        border-radius: 10px;
+        .modalContent{
+            button{
+                position: absolute;
+                top: 20px;
+                right: 20px;
+                img{
+                    width: 25px;
+                }
+            }
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            .about{
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 5px;
+                h3{
+                    font-size: 1.8rem;
+                    font-weight: 700;
+                    max-width: 700px;
+                }
+                span{
+                    font-weight: 600;
+                }
+            }
+            p{
+                font-size: 1.05rem;
+                font-weight: 400;
+                max-width: 700px;
+            }
+        }
     }
 }
