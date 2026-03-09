@@ -996,29 +996,7 @@ footer{
 //slider
 .sliderBox{
     position: relative;
-    .arrow-prev{
-        left: -2.5%;
-        img{
-            transform: rotate(-90deg);
-        }
-    }
-    .arrow-next{
-        right: calc(-2.5% - 10px);
-        img{
-            transform: rotate(90deg);
-        }
-    }
-    .arrow{
-        transform: translate(0, -50%);
-        top: 50%;
-        z-index: 10;
-        position: absolute;
-        img{
-            width: 35px;
-        }
-    }
-}
-.mySwiper{
+    .mySwiper{
     .swiper-wrapper{
         .swiper-slide{
             cursor: pointer;
@@ -1045,6 +1023,29 @@ footer{
         }
     }
 }
+    .arrow-prev{
+        left: -2.5%;
+        img{
+            transform: rotate(-90deg);
+        }
+    }
+    .arrow-next{
+        right: calc(-2.5% - 10px);
+        img{
+            transform: rotate(90deg);
+        }
+    }
+    .arrow{
+        transform: translate(0, -50%);
+        top: 50%;
+        z-index: 10;
+        position: absolute;
+        img{
+            width: 35px;
+        }
+    }
+}
+
 .modalHeroes{
     display: block;
     top: 0;

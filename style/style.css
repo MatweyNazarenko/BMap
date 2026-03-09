@@ -904,6 +904,35 @@ footer .info-footer p:first-child {
 .sliderBox {
   position: relative;
 }
+.sliderBox .mySwiper .swiper-wrapper .swiper-slide {
+  cursor: pointer;
+  padding: 20px 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 5px 0;
+}
+.sliderBox .mySwiper .swiper-wrapper .swiper-slide h3 {
+  font-size: 1.3rem;
+  font-weight: 700;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+}
+.sliderBox .mySwiper .swiper-wrapper .swiper-slide p {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  font-size: 1.05rem;
+  font-weight: 400;
+}
+.sliderBox .mySwiper .swiper-wrapper .swiper-slide img {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  height: 400px;
+}
 .sliderBox .arrow-prev {
   left: -2.5%;
 }
@@ -924,36 +953,6 @@ footer .info-footer p:first-child {
 }
 .sliderBox .arrow img {
   width: 35px;
-}
-
-.mySwiper .swiper-wrapper .swiper-slide {
-  cursor: pointer;
-  padding: 20px 10px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 5px 0;
-}
-.mySwiper .swiper-wrapper .swiper-slide h3 {
-  font-size: 1.3rem;
-  font-weight: 700;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-          user-select: none;
-}
-.mySwiper .swiper-wrapper .swiper-slide p {
-  -webkit-user-select: none;
-     -moz-user-select: none;
-          user-select: none;
-  font-size: 1.05rem;
-  font-weight: 400;
-}
-.mySwiper .swiper-wrapper .swiper-slide img {
-  -webkit-user-select: none;
-     -moz-user-select: none;
-          user-select: none;
-  height: 400px;
 }
 
 .modalHeroes {
