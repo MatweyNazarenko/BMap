@@ -253,7 +253,7 @@ modal.forEach(item =>{
         }
     });
     document.addEventListener('keydown', (event)=>{
-        if(event.key = "Escape"){
+        if(event.key == "Escape"){
             item.style.display = 'none';
             backModal.style.display = 'none';
             document.querySelector('body').style.overflow = 'auto';
