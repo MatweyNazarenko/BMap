@@ -984,8 +984,8 @@ footer .info-footer p:first-child {
 }
 .modalHeroes .modalBox .modalContent button {
   position: absolute;
-  top: 20px;
-  right: 20px;
+  top: 15px;
+  right: 15px;
 }
 .modalHeroes .modalBox .modalContent button img {
   width: 25px;
