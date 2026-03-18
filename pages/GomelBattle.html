@@ -257,19 +257,42 @@
 
     <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
     <script>
-    var swiper = new Swiper(".mySwiper", {
-      slidesPerView: 3.5,
-      spaceBetween: 20,
-      loop: true,
-      autoplay: {
-        delay: 3000,
-        disableOnInteraction: false,
-      },
-        navigation: {
-        nextEl: ".arrow-next",
-        prevEl: ".arrow-prev",
-      },
-    });
+            var swiper = new Swiper(".mySwiper", {
+            slidesPerView: 3.5,
+            spaceBetween: 20,
+            loop: true,
+            // autoplay: {
+            //     delay: 3000,
+            //     disableOnInteraction: false,
+            // },
+                navigation: {
+                nextEl: ".arrow-next",
+                prevEl: ".arrow-prev",
+            },
+              breakpoints: {
+                0: {
+                slidesPerView: 1.5,
+                spaceBetween: 20
+                },
+                550: {
+                slidesPerView: 2,
+                spaceBetween: 15
+                },
+                1000: {
+                slidesPerView: 2.5,
+                spaceBetween: 15
+                },
+                1100: {
+                slidesPerView: 3,
+                spaceBetween: 15
+                },
+                1250: {
+                slidesPerView: 3.5,
+                spaceBetween: 20
+                }
+            },
+            });
+
     </script>
     <script src="../script/info.js"></script>
 </body>
