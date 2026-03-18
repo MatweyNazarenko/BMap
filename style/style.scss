@@ -201,11 +201,8 @@ header{
     }
     .use-tasks{
         justify-content: space-between;
-        position: absolute;
-        bottom: 0;
-        left: -5%;
         width: 110%;
-        height: 90vh;
+        height: 91vh;
         background-color: #ffffff;
         display: none;
         padding: 30px;
@@ -565,6 +562,12 @@ footer{
     position: relative;
     z-index: 30 !important;
 }
+html{
+    overflow-x: hidden;
+}
+body{
+    overflow-x: hidden;
+}
 @media(max-width: 1900px){
     .helper-alien{
         display: none;
@@ -574,6 +577,15 @@ footer{
     }
 }
 @media(max-width:1320px){
+    .mapMenu{
+        .use-tasks{
+            gap: 50px;
+            .boxTasks{
+                margin-right: 20px;
+                width: 800px;
+            }
+        }
+    }
     .helper-alien{
         display: none;
     }
@@ -616,6 +628,29 @@ footer{
     }
 }
 @media(max-width:1200px){
+    .mapMenu{
+        .use-tasks{
+            height: initial;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            .boxTasks{
+                margin-right: 0;
+                height: 500px;
+            }
+            .buttonsBar{
+                margin-bottom: 30px;
+                button{
+                    font-size: 1.2rem;
+                    padding: 5px 10px;
+                    &:hover{
+                        padding: 5px 10px;
+                        font-size: 1.2rem;
+                    }
+                }
+            }
+        }
+    }
     .modal{
         width: 400px;
     }
@@ -650,6 +685,31 @@ footer{
     }
 }
 @media(max-width:865px){
+    .mapMenu{
+        .use-tasks{
+            height: initial;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+            .boxTasks{
+                margin-right: 0;
+                width: 700px;
+                height: 600px;
+            }
+            .buttonsBar{
+                margin-bottom: 30px;
+                button{
+                    font-size: 1.2rem;
+                    padding: 5px 10px;
+                    &:hover{
+                        padding: 5px 10px;
+                        font-size: 1.2rem;
+                    }
+                }
+            }
+        }
+    }
     .routePanel {
         right: 130px;
     }
@@ -682,6 +742,31 @@ footer{
     }
 }
 @media(max-width:740px){
+    .mapMenu{
+        .use-tasks{
+            height: initial;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+            .boxTasks{
+                margin-right: 0;
+                width: 500px;
+                height: 800px;
+            }
+            .buttonsBar{
+                margin-bottom: 30px;
+                button{
+                    font-size: 1.2rem;
+                    padding: 5px 10px;
+                    &:hover{
+                        padding: 5px 10px;
+                        font-size: 1.2rem;
+                    }
+                }
+            }
+        }
+    }
     .modal{
         padding: 15px 50px 50px 15px;
     }
@@ -711,6 +796,31 @@ footer{
     }
 }
 @media(max-width:630px){
+    .mapMenu{
+        .use-tasks{
+            height: initial;
+            display: flex;
+            flex-direction: column;
+            align-items: initial;
+            gap: 10px;
+            .boxTasks{
+                margin-right: 0;
+                width: 500px;
+                height: 700px;
+            }
+            .buttonsBar{
+                margin-bottom: 30px;
+                button{
+                    font-size: 1.2rem;
+                    padding: 5px 10px;
+                    &:hover{
+                        padding: 5px 10px;
+                        font-size: 1.2rem;
+                    }
+                }
+            }
+        }
+    }
     .routePanel{
         right: 240px;
     }
@@ -762,6 +872,31 @@ footer{
 }
 @media(max-width:530px){
     .mapMenu{
+        .use-tasks{
+            height: initial;
+            display: flex;
+            flex-direction: column;
+            align-items: initial;
+            gap: 10px;
+            .boxTasks{
+                margin-right: 0;
+                width: 400px;
+                height: 700px;
+            }
+            .buttonsBar{
+                margin-bottom: 30px;
+                button{
+                    font-size: 1.2rem;
+                    padding: 5px 10px;
+                    &:hover{
+                        padding: 5px 10px;
+                        font-size: 1.2rem;
+                    }
+                }
+            }
+        }
+    }
+    .mapMenu{
         .use-box{
             ul{
                 li{
@@ -804,6 +939,31 @@ footer{
     }
 }
 @media(max-width:480px){
+    .mapMenu{
+        .use-tasks{
+            height: initial;
+            display: flex;
+            flex-direction: column;
+            align-items: initial;
+            gap: 10px;
+            .boxTasks{
+                margin-right: 0;
+                width: 400px;
+                height: 700px;
+            }
+            .buttonsBar{
+                margin-bottom: 30px;
+                button{
+                    font-size: 1.2rem;
+                    padding: 5px 10px;
+                    &:hover{
+                        padding: 5px 10px;
+                        font-size: 1.2rem;
+                    }
+                }
+            }
+        }
+    }
     .routePanel{
         right: 100px;
     }
@@ -818,6 +978,31 @@ footer{
     }
 }
 @media(max-width:420px){
+    .mapMenu{
+        .use-tasks{
+            height: initial;
+            display: flex;
+            flex-direction: column;
+            align-items: initial;
+            gap: 10px;
+            .boxTasks{
+                margin-right: 0;
+                width: 350px;
+                height: 700px;
+            }
+            .buttonsBar{
+                margin-bottom: 30px;
+                button{
+                    font-size: 1.2rem;
+                    padding: 5px 10px;
+                    &:hover{
+                        padding: 5px 10px;
+                        font-size: 1.2rem;
+                    }
+                }
+            }
+        }
+    }
     .routePanel{
         right: 70px;
     }
@@ -851,6 +1036,31 @@ footer{
     }
 }
 @media(max-width:390px){
+        .mapMenu{
+        .use-tasks{
+            height: initial;
+            display: flex;
+            flex-direction: column;
+            align-items: initial;
+            gap: 10px;
+            .boxTasks{
+                margin-right: 0;
+                width: 300px;
+                height: 600px;
+            }
+            .buttonsBar{
+                margin-bottom: 30px;
+                button{
+                    font-size: 1.2rem;
+                    padding: 5px 10px;
+                    &:hover{
+                        padding: 5px 10px;
+                        font-size: 1.2rem;
+                    }
+                }
+            }
+        }
+    }
     .routePanel{
         top: 160px;
         right: 45px;

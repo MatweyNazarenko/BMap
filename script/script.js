@@ -322,8 +322,10 @@ buttonsArr.forEach((item,i)=>{
             update();
             if(i == 2){
                 routePanel.style.zIndex = "-1";
+                mapJS.style.display = "none";
             }else{
                 routePanel.style.zIndex = "10";
+                mapJS.style.display = "block";
             }
     })
 })
