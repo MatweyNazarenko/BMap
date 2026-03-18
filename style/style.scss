@@ -1235,6 +1235,161 @@ body{
         }
     }
 }
+}
+@media(max-width:1340px) {
+    .arrow-prev{
+        display: none;
+    }
+    .arrow-next{
+        display: none;
+    }
+}
+@media(max-width:1100px){
+    .modalHeroes{
+        .modalBox{
+            .modalContent{
+                .about{
+                    h3{
+                        max-width: 350px !important;
+                        text-align: center;
+                    }
+                }
+            }
+        }
+    }
+}
+@media(max-width:1000px){
+    .modalHeroes{
+        .modalBox{
+            max-height: 70vh !important;
+            width: 600px !important;
+        }
+    }
+}
+@media(max-width:800px) {
+        .modalHeroes{
+        .modalBox{
+            .modalContent{
+                .about{
+                    h3{
+                        max-width: 200px !important;
+                        text-align: center;
+                    }
+                }
+            }
+        }
+    }
+        .sliderBox{
+            .mySwiper{
+            .swiper-wrapper{
+                .swiper-slide{
+                    h3{
+                        font-size: 1.2rem;
+                        font-weight: 700;
+                        user-select: none;
+                        text-align: center;
+                        max-width: 260px;
+                    }
+                    p{
+                        font-size: 1.05rem;
+                    }
+                    img{
+                        user-select: none;
+                        height: 310px;
+                    }
+                }
+            }
+        }
+    }
+}
+@media(max-width:700px) {
+    .modalHeroes{
+        .modalBox{
+            max-height: 70vh !important;
+            width: 460px !important;
+        }
+    }
+    .sliderBox{
+        .mySwiper{
+        .swiper-wrapper{
+            .swiper-slide{
+                h3{
+                    font-size: 1.2rem;
+                    font-weight: 700;
+                    user-select: none;
+                    text-align: center;
+                    max-width: 260px;
+                }
+                p{
+                    font-size: 1.02rem;
+                }
+                img{
+                    user-select: none;
+                    height: 300px;
+                }
+            }
+        }
+    }
+}
+}
+
+@media(max-width:500px) {
+    .modalHeroes{
+        .modalBox{
+            max-height: 100vh !important;
+            width: 100% !important;
+        }
+    }
+    .sliderBox{
+        .mySwiper{
+        .swiper-wrapper{
+            .swiper-slide{
+                h3{
+                    font-size: 1.15rem;
+                    font-weight: 700;
+                    user-select: none;
+                    text-align: center;
+                    max-width: 200px;
+                }
+                p{
+                    max-width: 200px;
+                    font-size: 0.8rem;
+                }
+                img{
+                    user-select: none;
+                    height: 250px;
+                }
+            }
+        }
+    }
+}
+}
+@media(max-width:400px) {
+    .sliderBox{
+        .mySwiper{
+        .swiper-wrapper{
+            .swiper-slide{
+                h3{
+                    font-size: 1.1rem;
+                    font-weight: 700;
+                    user-select: none;
+                    text-align: center;
+                    max-width: 200px;
+                }
+                p{
+                    max-width: 200px;
+                    font-size: 0.7rem;
+                }
+                img{
+                    user-select: none;
+                    height: 200px;
+                }
+            }
+        }
+    }
+}
+}
+
     .arrow-prev{
         left: -2.5%;
         img{
@@ -1256,7 +1411,6 @@ body{
             width: 35px;
         }
     }
-}
 
 .modalHeroes{
     display: block;
